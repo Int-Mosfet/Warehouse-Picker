@@ -1,0 +1,58 @@
+ XDEF IRQ_ISR
+ 
+ XREF toggle_note
+ XREF note_we_on
+ XREF toggle_count
+ XREF song1
+ XREF song2
+ XREF pb_pressed
+ XREF irq_pressed
+ XREF IRQ_to_PW_flag
+ XREF irq_time_stamp
+ XREF local_time_msg_2 
+ XREF Port_s
+ XREF SendsChr
+ XREF PlayTone
+ XREF Port_t_ddr
+ XREF Port_t
+ XREF password
+ XREF fire_message
+ XREF display_to_lcd
+ XREF seconds
+
+;;This is for when you push the IRQ button
+;;Will flash LED's and should play siren eventually...update: it does
+  
+IRQ_ISR:
+           pshx
+           pshy
+           pshd
+           
+           ldd #fire_message     ;this message will hold on LCD as long as you hold IRQ button
+           jsr display_to_lcd
+           
+           ;;;SET IRQ PRESSED FLAG;;;
+           movb #1, irq_pressed				 ;;will jump to song in RTI  
+           movb #$00, Port_s
+		   
+           ;jsr rti_delay ;<--causes lockup
+           ;ldy #$FFFF			 ;;<--CAN'T USE DELAY LOOPS!!!
+;repeat2:dey
+           ;bne repeat2
+           ;movb #0, Port_s		;turn off led's before we return from interrupt
+           ;jsr password   ;jump to password prompt, we want to set flag instead
+           ;jsr password		 ;;this cause a weird bug but don't have time to diagnose now
+           
+           ldd #local_time_msg_2        ;;this doesn't work either, doesn't matter as D will get overwritten
+           std irq_time_stamp
+              
+           puld
+           puly
+           pulx
+           
+exit_irq:  
+           rti
+  
+  
+  
+ 

@@ -1,0 +1,396 @@
+ XDEF gmt_time
+
+ XREF display_to_lcd
+ XREF read_keypad
+ XREF KEY_PRESSED
+ XREF gmt_counter
+ XREF gmt_OnesDigit
+ XREF gmt_TensDigit
+ XREF gmt_HundredsDigit
+ XREF gmt_remainder
+ XREF gmt_day
+ XREF gmt_hours
+ XREF gmt_minutes
+ XREF gmt_seconds
+ XREF gmt_time_msg_1
+ XREF gmt_time_digits
+ XREF gmt_day_char_1
+ XREF gmt_day_char_2
+ XREF gmt_day_char_3
+ XREF gmt_time_msg_2
+ 
+;same as local time, just completely separate
+;wall clock running 4 hours ahead (at startup)
+;of local time
+;here we display time if $FF is returned from keypad,
+;else if B is pressed it means user wants to set time
+;this will begin a sequence, starting with the hours 
+;character, then the minutes, then seconds, and finally
+;the day (inputted as 1-7 for mon thru sun)
+;to display we need to do ASCII conversion
+;and to always be checking for A or B being pressed,
+;as well as numbers for the times
+
+ 
+gmt_time:        pshd
+                 pshx
+                 pshy
+ 
+			 ;this will display the updating time continuously if in gmt
+			 ;time menu item
+gdisp_time_day:     
+             ldaa #0
+             ldab gmt_hours
+             ldx #100
+             idiv
+             std gmt_remainder
+             tfr x,d
+             stab gmt_HundredsDigit
+                  
+             ldd gmt_remainder
+             ldx #10
+             idiv
+             std gmt_remainder
+             tfr x,d 
+             stab gmt_TensDigit
+                  
+             ldd gmt_remainder
+             stab gmt_OnesDigit
+                  
+             ;ASCII conversion                 
+             ldaa gmt_TensDigit
+             adda #$30
+             staa gmt_TensDigit
+                  
+             ldaa gmt_OnesDigit
+             adda #$30
+             staa gmt_OnesDigit
+                  
+             
+             movb gmt_TensDigit, gmt_time_msg_1+20   ;hours
+             movb gmt_OnesDigit, gmt_time_msg_1+21   ;hours
+             
+             ;minutes
+             ldaa #0
+             ldab gmt_minutes
+             ldx #100
+             idiv
+             std gmt_remainder
+             tfr x,d
+             stab gmt_HundredsDigit
+                  
+             ldd gmt_remainder
+             ldx #10
+             idiv
+             std gmt_remainder
+             tfr x,d
+             stab  gmt_TensDigit
+                  
+             ldd gmt_remainder
+             stab gmt_OnesDigit
+                  
+             ;ASCII conversion                 
+             ldaa gmt_TensDigit
+             adda #$30
+             staa gmt_TensDigit
+                  
+             ldaa gmt_OnesDigit
+             adda #$30
+             staa gmt_OnesDigit
+             
+             movb gmt_TensDigit, gmt_time_msg_1+23  ;minutes
+             movb gmt_OnesDigit, gmt_time_msg_1+24  ;minutes
+             
+             ;seconds
+             ldaa #0
+             ldab gmt_seconds
+             ldx #100
+             idiv
+             std  gmt_remainder
+             tfr x,d
+             stab  gmt_HundredsDigit
+             
+             ldd gmt_remainder
+             ldx #10
+             idiv
+             std gmt_remainder
+             tfr x,d
+             stab gmt_TensDigit
+                  
+             ldd gmt_remainder
+             stab gmt_OnesDigit
+                  
+             ;ASCII conversion                 
+             ldaa gmt_TensDigit
+             adda #$30
+             staa gmt_TensDigit
+                  
+             ldaa gmt_OnesDigit
+             adda #$30
+             staa gmt_OnesDigit
+            
+             movb gmt_TensDigit, gmt_time_msg_1+26    ;seconds
+             movb gmt_OnesDigit, gmt_time_msg_1+27    ;seconds
+             
+             ;display day
+             ldaa gmt_day
+             ldx #gmt_day_char_1
+			 ;using movb to display it
+             movb a, x, gmt_time_msg_1+29       ;M T W T F S S
+             ldx #gmt_day_char_2
+             movb a, x, gmt_time_msg_1+30       ;O U E H R A U
+             ldx #gmt_day_char_3
+             movb a, x, gmt_time_msg_1+31       ;N E D H I T N
+ 
+             ldd #gmt_time_msg_1
+             jsr display_to_lcd
+           
+             ;inputing time/day
+             jsr read_keypad 
+             ldaa KEY_PRESSED
+             cmpa #$0A                   ;exit if A pressed
+             lbeq exit_gmt_time
+             cmpa #$0B                   ;else user wants to input time
+             lbne gdisp_time_day          ;keep reading keypad
+             
+			 ;if B's pressed user will be prompted to enter time
+			 ;and blanks will be displayed on LCD
+			 ;each time you enter one it'll be filled in
+			 ;or you can go back (pressing A acts like a backspace)
+          
+             movb #'_', gmt_time_msg_2+18  ;hours
+             movb #'_', gmt_time_msg_2+19  ;hours
+   
+             movb #'_', gmt_time_msg_2+21  ;minutes
+             movb #'_', gmt_time_msg_2+22  ;minute
+           
+             movb #'_', gmt_time_msg_2+24  ;first char of day
+             movb #'_', gmt_time_msg_2+25  ;second char of day
+             movb #'_', gmt_time_msg_2+26  ;third char of day
+           
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd
+                   
+             ;get first digit
+			 ;and continue going down the line
+			 ;the "day's digit" is last, 1-7
+gget_first_hours_digit:
+             jsr  read_keypad
+             ldaa KEY_PRESSED
+             cmpa #$FF          ;keep reading if no key pressed
+             beq  gget_first_hours_digit
+             
+             cmpa #$0A           ;go back if A pressed
+             bne gcheck_if_higher_than_2
+             lbra gdisp_time_day   ;will display current time again if A pressed
+			 
+gcheck_if_higher_than_2:			  
+             ;doing military time
+             ;check for 24 instead of 12
+             ;make sure user doesn't input a wrong time			 
+             cmpa #2
+             bhi gget_first_hours_digit   ;branch if higher than 2 to re-read
+			                             ;has to be 0 or 1
+             staa gmt_time_digits   ;else store the digit
+             ;ASCII conversion 
+             adda #$30
+             staa gmt_time_msg_2+18
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd          ;display updated message
+ 
+              ;get next digit for hours
+gget_2nd_hours_digit:
+             ldaa gmt_time_digits
+             cmpa #1
+             bhi gsecond_digit_could_be_2    ;branch if higher than 1
+			 ;else it's a one or zero
+gsecond_digit_less_than_2:	   ;or greater than 9
+             jsr read_keypad
+             ldaa KEY_PRESSED
+             cmpa #$FF        ;if no key was pressed, read keypad again
+             beq  gsecond_digit_less_than_2
+             
+             cmpa #$0A      ;if A pressed go back to change the previous digit
+             bne gcompare_digit_to_9 ;if not move on
+             movb #'_', gmt_time_msg_2+18
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd
+             bra gget_first_hours_digit
+           
+gcompare_digit_to_9:		   
+             cmpa #9
+             bhi  gsecond_digit_less_than_2   ;if digit higher than 9, keep reading
+             ;else store it
+			 staa gmt_time_digits+1
+             ;ASCII conversion  
+             adda #$30
+             staa gmt_time_msg_2+19  
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd
+			 ;continue to reading minutes now
+             bra gfirst_minutes_digit  ;branches 1st digit of minutes
+             
+			 
+gsecond_digit_could_be_2: ;not sure yet, higher than 1 though
+             ;this is still for 2nd hours digit 
+             jsr read_keypad
+             ldaa KEY_PRESSED
+             cmpa #$FF        ;if no key was pressed, read keypad again
+             beq gsecond_digit_could_be_2
+               
+             cmpa #$0A      ;if A pressed, put '_' char back
+             bne gcheck_if_3_or_higher  ;otherwise continue reading it
+             movb #'_', gmt_time_msg_2+18  
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd 
+             bra gget_first_hours_digit      ;go back to get first digit
+
+gcheck_if_3_or_higher:			 
+             ;second digit can't be 3 or higher
+             cmpa #3
+             bhi gsecond_digit_could_be_2
+			 ;else store it
+             staa gmt_time_digits+1
+			 ;ASCII conversion
+             adda #$30
+             staa gmt_time_msg_2+19
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd  
+ 
+             
+               
+             ;;reading first minutes digit
+gfirst_minutes_digit:			 
+             jsr  read_keypad
+             ldaa KEY_PRESSED
+             cmpa #$FF        ;if no key was pressed, read keypad again
+             beq  gfirst_minutes_digit
+             ;if A pressed, we go back to previous char  
+             cmpa #$0A 
+             ;else continue			 
+             bne gcontinue_read_1st_minute
+             movb #'_', gmt_time_msg_2+19
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd 
+             bra gget_2nd_hours_digit
+			 
+gcontinue_read_1st_minute:               
+             ;can't be greater than 5
+             cmpa #5
+             bhi gfirst_minutes_digit  ;if higher than 5, re-read
+			 ;else store
+             staa gmt_time_digits+2
+             ;ASCII conversion 
+             adda #$30     
+             staa gmt_time_msg_2+21     
+             ldd #gmt_time_msg_2   
+             jsr display_to_lcd  ;restore it
+
+ 
+             ;;getting 2nd digit minutes
+gsecond_minutes_digit
+             jsr  read_keypad
+             ldaa KEY_PRESSED
+             cmpa #$FF        ;if no key pressed read keypad again
+             beq  gsecond_minutes_digit
+             ;if A pressed, we go back to previous char  
+             cmpa #$0A
+             bne gcontinue_read_2nd_minute   ;else we move on
+             movb #'_', gmt_time_msg_2+21
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd 
+             bra gfirst_minutes_digit
+
+gcontinue_read_2nd_minute:			 
+             cmpa #9      ;can't be higher than 9
+             bhi gsecond_minutes_digit  ;if it is, re-read
+			 ;else store it
+             staa gmt_time_digits+3
+             
+             ;ASCII conversion			 
+             adda #$30
+             staa gmt_time_msg_2+22
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd  ;restore it
+              
+              
+			  ;reading the day
+gread_day_1:              
+             jsr read_keypad
+             ldaa KEY_PRESSED
+             cmpa #$FF
+             beq gread_day_1
+             ;if A pressed, we go back to previous char  
+             cmpa #$0A
+             bne gcontinue_read_1st_day        ;else we move on
+             movb #'_', gmt_time_msg_2+22
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd 
+             bra gsecond_minutes_digit
+
+gcontinue_read_1st_day:			 
+             ;has to be 1-7, otherwise re-read
+             cmpa #7
+             bhi gread_day_1
+             cmpa #0
+             beq gread_day_1
+			 ;otherwise store it
+             staa gmt_time_digits+4
+             tfr a,d
+             ldx #gmt_day_char_1
+			 ;first char of day put in string
+             movb d, x, gmt_time_msg_2+24    
+             ldx #gmt_day_char_2
+			 ;second char of day put in string
+             movb d, x, gmt_time_msg_2+25
+             ldx #gmt_day_char_3
+			 ;third char of day put in string
+             movb d, x, gmt_time_msg_2+26
+			 ;display it to LCD
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd 
+
+gconfirm_day:
+             jsr read_keypad 
+             ldaa KEY_PRESSED
+             cmpa #$FF
+             beq gconfirm_day
+             ;if A pressed, we go back to previous char(s)
+             ;set all 3 back to blanks if we go back here			 
+             cmpa #$0A
+             bne gcontinue_confirm_day        ;else we move on
+             movb #'_', gmt_time_msg_2+24
+             movb #'_', gmt_time_msg_2+25
+             movb #'_', gmt_time_msg_2+26
+             ldd #gmt_time_msg_2
+             jsr display_to_lcd 
+             bra gread_day_1         ;start over reading day
+
+gcontinue_confirm_day:
+             cmpa #$0B      ;if B pressed, we load in new values
+             bne gconfirm_day ;else we go back
+			 
+             ;store hours
+             ldaa gmt_time_digits
+             ldab #10
+             mul
+             ldaa gmt_time_digits+1
+             aba
+             staa gmt_hours
+               
+             ;store minutes
+             ldaa gmt_time_digits+2
+             ldab #10
+             mul
+             ldaa gmt_time_digits+3
+             aba
+             staa gmt_minutes
+               
+             ;store day
+             movb gmt_time_digits+4, gmt_day   
+             lbra gdisp_time_day
+        
+exit_gmt_time:    puly
+                  pulx
+                  puld
+                  rts

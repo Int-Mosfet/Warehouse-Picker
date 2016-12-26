@@ -1,0 +1,2371 @@
+*** EVALUATION ***
+PROGRAM "C:\Users\jwignot.ADS\Desktop\wh_picker_fp10_new3_final\bin\Project.abs"
+
+*********************************************************************************************
+TARGET SECTION
+---------------------------------------------------------------------------------------------
+Processor   : Freescale HC12
+Memory Model: SMALL
+File Format : ELF\DWARF 2.0
+Linker      : SmartLinker V-5.0.40 Build 10203, Jul 23 2010
+
+*********************************************************************************************
+FILE SECTION
+---------------------------------------------------------------------------------------------
+main.asm.o                              Model: SMALL,         Lang: Assembler
+lcddisp.c.o                             Model: SMALL,         Lang: ANSI-C
+mc9s12e128.c.o                          Model: SMALL,         Lang: ANSI-C
+potentiometer.c.o                       Model: SMALL,         Lang: ANSI-C
+keypad.asm.o                            Model: SMALL,         Lang: Assembler
+main_menu.asm.o                         Model: SMALL,         Lang: Assembler
+lcddisp.asm.o                           Model: SMALL,         Lang: Assembler
+password.asm.o                          Model: SMALL,         Lang: Assembler
+delay.asm.o                             Model: SMALL,         Lang: Assembler
+RTI.asm.o                               Model: SMALL,         Lang: Assembler
+irq.asm.o                               Model: SMALL,         Lang: Assembler
+SendsChr.c.o                            Model: SMALL,         Lang: ANSI-C
+gmt_time.asm.o                          Model: SMALL,         Lang: Assembler
+local_time.asm.o                        Model: SMALL,         Lang: Assembler
+picker_init.asm.o                       Model: SMALL,         Lang: Assembler
+wh_picker.asm.o                         Model: SMALL,         Lang: Assembler
+
+*********************************************************************************************
+STARTUP SECTION
+---------------------------------------------------------------------------------------------
+Entry point: 0xC000 (_Startup)
+
+*********************************************************************************************
+SECTION-ALLOCATION SECTION
+Section Name                    Size  Type     From       To       Segment
+---------------------------------------------------------------------------------------------
+.init                             14     R     0xC000     0xC00D   ROM_C000
+NON_BANKED                       301     R     0xC00E     0xC13A   ROM_C000
+.stack                          1024   R/W      0x400      0x7FF   RAM
+.abs_section_8                     1   N/I        0x8        0x8   .absSeg0
+.abs_section_9                     1   N/I        0x9        0x9   .absSeg1
+.abs_section_a                     1   N/I        0xA        0xA   .absSeg2
+.abs_section_b                     1   N/I        0xB        0xB   .absSeg3
+.abs_section_c                     1   N/I        0xC        0xC   .absSeg4
+.abs_section_d                     1   N/I        0xD        0xD   .absSeg5
+.abs_section_e                     1   N/I        0xE        0xE   .absSeg6
+.abs_section_10                    1   N/I       0x10       0x10   .absSeg7
+.abs_section_11                    1   N/I       0x11       0x11   .absSeg8
+.abs_section_13                    1   N/I       0x13       0x13   .absSeg9
+.abs_section_15                    1   N/I       0x15       0x15   .absSeg10
+.abs_section_16                    1   N/I       0x16       0x16   .absSeg11
+.abs_section_19                    1   N/I       0x19       0x19   .absSeg12
+.abs_section_1c                    1   N/I       0x1C       0x1C   .absSeg13
+.abs_section_1d                    1   N/I       0x1D       0x1D   .absSeg14
+.abs_section_1e                    1   N/I       0x1E       0x1E   .absSeg15
+.abs_section_1f                    1   N/I       0x1F       0x1F   .absSeg16
+.abs_section_20                    1   N/I       0x20       0x20   .absSeg17
+.abs_section_21                    1   N/I       0x21       0x21   .absSeg18
+.abs_section_24                    1   N/I       0x24       0x24   .absSeg19
+.abs_section_25                    1   N/I       0x25       0x25   .absSeg20
+.abs_section_28                    1   N/I       0x28       0x28   .absSeg21
+.abs_section_29                    1   N/I       0x29       0x29   .absSeg22
+.abs_section_2a                    1   N/I       0x2A       0x2A   .absSeg23
+.abs_section_2d                    1   N/I       0x2D       0x2D   .absSeg24
+.abs_section_30                    1   N/I       0x30       0x30   .absSeg25
+.abs_section_32                    1   N/I       0x32       0x32   .absSeg26
+.abs_section_33                    1   N/I       0x33       0x33   .absSeg27
+.abs_section_34                    1   N/I       0x34       0x34   .absSeg28
+.abs_section_35                    1   N/I       0x35       0x35   .absSeg29
+.abs_section_37                    1   N/I       0x37       0x37   .absSeg30
+.abs_section_38                    1   N/I       0x38       0x38   .absSeg31
+.abs_section_39                    1   N/I       0x39       0x39   .absSeg32
+.abs_section_3a                    1   N/I       0x3A       0x3A   .absSeg33
+.abs_section_3b                    1   N/I       0x3B       0x3B   .absSeg34
+.abs_section_3c                    1   N/I       0x3C       0x3C   .absSeg35
+.abs_section_3f                    1   N/I       0x3F       0x3F   .absSeg36
+.abs_section_40                    1   N/I       0x40       0x40   .absSeg37
+.abs_section_41                    1   N/I       0x41       0x41   .absSeg38
+.abs_section_42                    1   N/I       0x42       0x42   .absSeg39
+.abs_section_43                    1   N/I       0x43       0x43   .absSeg40
+.abs_section_46                    1   N/I       0x46       0x46   .absSeg41
+.abs_section_47                    1   N/I       0x47       0x47   .absSeg42
+.abs_section_48                    1   N/I       0x48       0x48   .absSeg43
+.abs_section_4a                    1   N/I       0x4A       0x4A   .absSeg44
+.abs_section_4c                    1   N/I       0x4C       0x4C   .absSeg45
+.abs_section_4d                    1   N/I       0x4D       0x4D   .absSeg46
+.abs_section_4e                    1   N/I       0x4E       0x4E   .absSeg47
+.abs_section_4f                    1   N/I       0x4F       0x4F   .absSeg48
+.abs_section_60                    1   N/I       0x60       0x60   .absSeg49
+.abs_section_61                    1   N/I       0x61       0x61   .absSeg50
+.abs_section_86                    1   N/I       0x86       0x86   .absSeg51
+.abs_section_89                    1   N/I       0x89       0x89   .absSeg52
+.abs_section_8a                    1   N/I       0x8A       0x8A   .absSeg53
+.abs_section_8b                    1   N/I       0x8B       0x8B   .absSeg54
+.abs_section_8e                    1   N/I       0x8E       0x8E   .absSeg55
+.abs_section_8f                    1   N/I       0x8F       0x8F   .absSeg56
+.abs_section_ca                    1   N/I       0xCA       0xCA   .absSeg57
+.abs_section_cb                    1   N/I       0xCB       0xCB   .absSeg58
+.abs_section_cc                    1   N/I       0xCC       0xCC   .absSeg59
+.abs_section_cd                    1   N/I       0xCD       0xCD   .absSeg60
+.abs_section_ce                    1   N/I       0xCE       0xCE   .absSeg61
+.abs_section_cf                    1   N/I       0xCF       0xCF   .absSeg62
+.abs_section_d2                    1   N/I       0xD2       0xD2   .absSeg63
+.abs_section_d3                    1   N/I       0xD3       0xD3   .absSeg64
+.abs_section_d4                    1   N/I       0xD4       0xD4   .absSeg65
+.abs_section_d5                    1   N/I       0xD5       0xD5   .absSeg66
+.abs_section_d6                    1   N/I       0xD6       0xD6   .absSeg67
+.abs_section_d7                    1   N/I       0xD7       0xD7   .absSeg68
+.abs_section_d8                    1   N/I       0xD8       0xD8   .absSeg69
+.abs_section_d9                    1   N/I       0xD9       0xD9   .absSeg70
+.abs_section_da                    1   N/I       0xDA       0xDA   .absSeg71
+.abs_section_db                    1   N/I       0xDB       0xDB   .absSeg72
+.abs_section_dd                    1   N/I       0xDD       0xDD   .absSeg73
+.abs_section_e0                    1   N/I       0xE0       0xE0   .absSeg74
+.abs_section_e1                    1   N/I       0xE1       0xE1   .absSeg75
+.abs_section_e2                    1   N/I       0xE2       0xE2   .absSeg76
+.abs_section_e3                    1   N/I       0xE3       0xE3   .absSeg77
+.abs_section_e4                    1   N/I       0xE4       0xE4   .absSeg78
+.abs_section_ea                    1   N/I       0xEA       0xEA   .absSeg79
+.abs_section_eb                    1   N/I       0xEB       0xEB   .absSeg80
+.abs_section_ec                    1   N/I       0xEC       0xEC   .absSeg81
+.abs_section_ed                    1   N/I       0xED       0xED   .absSeg82
+.abs_section_ee                    1   N/I       0xEE       0xEE   .absSeg83
+.abs_section_ef                    1   N/I       0xEF       0xEF   .absSeg84
+.abs_section_f0                    1   N/I       0xF0       0xF0   .absSeg85
+.abs_section_f2                    1   N/I       0xF2       0xF2   .absSeg86
+.abs_section_f3                    1   N/I       0xF3       0xF3   .absSeg87
+.abs_section_f4                    1   N/I       0xF4       0xF4   .absSeg88
+.abs_section_f6                    1   N/I       0xF6       0xF6   .absSeg89
+.abs_section_f7                    1   N/I       0xF7       0xF7   .absSeg90
+.abs_section_100                   1   N/I      0x100      0x100   .absSeg91
+.abs_section_101                   1   N/I      0x101      0x101   .absSeg92
+.abs_section_103                   1   N/I      0x103      0x103   .absSeg93
+.abs_section_104                   1   N/I      0x104      0x104   .absSeg94
+.abs_section_105                   1   N/I      0x105      0x105   .absSeg95
+.abs_section_106                   1   N/I      0x106      0x106   .absSeg96
+.abs_section_140                   1   N/I      0x140      0x140   .absSeg97
+.abs_section_141                   1   N/I      0x141      0x141   .absSeg98
+.abs_section_142                   1   N/I      0x142      0x142   .absSeg99
+.abs_section_143                   1   N/I      0x143      0x143   .absSeg100
+.abs_section_146                   1   N/I      0x146      0x146   .absSeg101
+.abs_section_147                   1   N/I      0x147      0x147   .absSeg102
+.abs_section_148                   1   N/I      0x148      0x148   .absSeg103
+.abs_section_14a                   1   N/I      0x14A      0x14A   .absSeg104
+.abs_section_14c                   1   N/I      0x14C      0x14C   .absSeg105
+.abs_section_14d                   1   N/I      0x14D      0x14D   .absSeg106
+.abs_section_14e                   1   N/I      0x14E      0x14E   .absSeg107
+.abs_section_14f                   1   N/I      0x14F      0x14F   .absSeg108
+.abs_section_160                   1   N/I      0x160      0x160   .absSeg109
+.abs_section_161                   1   N/I      0x161      0x161   .absSeg110
+.abs_section_180                   1   N/I      0x180      0x180   .absSeg111
+.abs_section_181                   1   N/I      0x181      0x181   .absSeg112
+.abs_section_182                   1   N/I      0x182      0x182   .absSeg113
+.abs_section_183                   1   N/I      0x183      0x183   .absSeg114
+.abs_section_186                   1   N/I      0x186      0x186   .absSeg115
+.abs_section_187                   1   N/I      0x187      0x187   .absSeg116
+.abs_section_188                   1   N/I      0x188      0x188   .absSeg117
+.abs_section_18a                   1   N/I      0x18A      0x18A   .absSeg118
+.abs_section_18c                   1   N/I      0x18C      0x18C   .absSeg119
+.abs_section_18d                   1   N/I      0x18D      0x18D   .absSeg120
+.abs_section_18e                   1   N/I      0x18E      0x18E   .absSeg121
+.abs_section_18f                   1   N/I      0x18F      0x18F   .absSeg122
+.abs_section_1a0                   1   N/I      0x1A0      0x1A0   .absSeg123
+.abs_section_1a1                   1   N/I      0x1A1      0x1A1   .absSeg124
+.abs_section_1e0                   1   N/I      0x1E0      0x1E0   .absSeg125
+.abs_section_1e1                   1   N/I      0x1E1      0x1E1   .absSeg126
+.abs_section_1e2                   1   N/I      0x1E2      0x1E2   .absSeg127
+.abs_section_1e3                   1   N/I      0x1E3      0x1E3   .absSeg128
+.abs_section_1e4                   1   N/I      0x1E4      0x1E4   .absSeg129
+.abs_section_1e5                   1   N/I      0x1E5      0x1E5   .absSeg130
+.abs_section_1e8                   1   N/I      0x1E8      0x1E8   .absSeg131
+.abs_section_1e9                   1   N/I      0x1E9      0x1E9   .absSeg132
+.abs_section_1fe                   1   N/I      0x1FE      0x1FE   .absSeg133
+.abs_section_200                   1   N/I      0x200      0x200   .absSeg134
+.abs_section_201                   1   N/I      0x201      0x201   .absSeg135
+.abs_section_202                   1   N/I      0x202      0x202   .absSeg136
+.abs_section_203                   1   N/I      0x203      0x203   .absSeg137
+.abs_section_204                   1   N/I      0x204      0x204   .absSeg138
+.abs_section_205                   1   N/I      0x205      0x205   .absSeg139
+.abs_section_206                   1   N/I      0x206      0x206   .absSeg140
+.abs_section_207                   1   N/I      0x207      0x207   .absSeg141
+.abs_section_208                   1   N/I      0x208      0x208   .absSeg142
+.abs_section_209                   1   N/I      0x209      0x209   .absSeg143
+.abs_section_20a                   1   N/I      0x20A      0x20A   .absSeg144
+.abs_section_20c                   1   N/I      0x20C      0x20C   .absSeg145
+.abs_section_20d                   1   N/I      0x20D      0x20D   .absSeg146
+.abs_section_20e                   1   N/I      0x20E      0x20E   .absSeg147
+.abs_section_20f                   1   N/I      0x20F      0x20F   .absSeg148
+.abs_section_220                   1   N/I      0x220      0x220   .absSeg149
+.abs_section_221                   1   N/I      0x221      0x221   .absSeg150
+.abs_section_228                   1   N/I      0x228      0x228   .absSeg151
+.abs_section_229                   1   N/I      0x229      0x229   .absSeg152
+.abs_section_230                   1   N/I      0x230      0x230   .absSeg153
+.abs_section_231                   1   N/I      0x231      0x231   .absSeg154
+.abs_section_240                   1   N/I      0x240      0x240   .absSeg155
+.abs_section_241                   1   N/I      0x241      0x241   .absSeg156
+.abs_section_242                   1   N/I      0x242      0x242   .absSeg157
+.abs_section_243                   1   N/I      0x243      0x243   .absSeg158
+.abs_section_244                   1   N/I      0x244      0x244   .absSeg159
+.abs_section_245                   1   N/I      0x245      0x245   .absSeg160
+.abs_section_248                   1   N/I      0x248      0x248   .absSeg161
+.abs_section_249                   1   N/I      0x249      0x249   .absSeg162
+.abs_section_24a                   1   N/I      0x24A      0x24A   .absSeg163
+.abs_section_24b                   1   N/I      0x24B      0x24B   .absSeg164
+.abs_section_24c                   1   N/I      0x24C      0x24C   .absSeg165
+.abs_section_24d                   1   N/I      0x24D      0x24D   .absSeg166
+.abs_section_24e                   1   N/I      0x24E      0x24E   .absSeg167
+.abs_section_250                   1   N/I      0x250      0x250   .absSeg168
+.abs_section_251                   1   N/I      0x251      0x251   .absSeg169
+.abs_section_252                   1   N/I      0x252      0x252   .absSeg170
+.abs_section_253                   1   N/I      0x253      0x253   .absSeg171
+.abs_section_254                   1   N/I      0x254      0x254   .absSeg172
+.abs_section_255                   1   N/I      0x255      0x255   .absSeg173
+.abs_section_256                   1   N/I      0x256      0x256   .absSeg174
+.abs_section_258                   1   N/I      0x258      0x258   .absSeg175
+.abs_section_259                   1   N/I      0x259      0x259   .absSeg176
+.abs_section_25a                   1   N/I      0x25A      0x25A   .absSeg177
+.abs_section_25b                   1   N/I      0x25B      0x25B   .absSeg178
+.abs_section_25c                   1   N/I      0x25C      0x25C   .absSeg179
+.abs_section_25d                   1   N/I      0x25D      0x25D   .absSeg180
+.abs_section_260                   1   N/I      0x260      0x260   .absSeg181
+.abs_section_261                   1   N/I      0x261      0x261   .absSeg182
+.abs_section_262                   1   N/I      0x262      0x262   .absSeg183
+.abs_section_263                   1   N/I      0x263      0x263   .absSeg184
+.abs_section_264                   1   N/I      0x264      0x264   .absSeg185
+.abs_section_265                   1   N/I      0x265      0x265   .absSeg186
+.abs_section_268                   1   N/I      0x268      0x268   .absSeg187
+.abs_section_269                   1   N/I      0x269      0x269   .absSeg188
+.abs_section_26a                   1   N/I      0x26A      0x26A   .absSeg189
+.abs_section_26b                   1   N/I      0x26B      0x26B   .absSeg190
+.abs_section_26c                   1   N/I      0x26C      0x26C   .absSeg191
+.abs_section_26d                   1   N/I      0x26D      0x26D   .absSeg192
+.abs_section_26e                   1   N/I      0x26E      0x26E   .absSeg193
+.abs_section_0                     2   N/I        0x0        0x1   .absSeg194
+.abs_section_2                     2   N/I        0x2        0x3   .absSeg195
+.abs_section_1a                    2   N/I       0x1A       0x1B   .absSeg196
+.abs_section_22                    2   N/I       0x22       0x23   .absSeg197
+.abs_section_26                    2   N/I       0x26       0x27   .absSeg198
+.abs_section_2b                    2   N/I       0x2B       0x2C   .absSeg199
+.abs_section_2e                    2   N/I       0x2E       0x2F   .absSeg200
+.abs_section_44                    2   N/I       0x44       0x45   .absSeg201
+.abs_section_58                    2   N/I       0x58       0x59   .absSeg202
+.abs_section_5a                    2   N/I       0x5A       0x5B   .absSeg203
+.abs_section_5c                    2   N/I       0x5C       0x5D   .absSeg204
+.abs_section_5e                    2   N/I       0x5E       0x5F   .absSeg205
+.abs_section_62                    2   N/I       0x62       0x63   .absSeg206
+.abs_section_82                    2   N/I       0x82       0x83   .absSeg207
+.abs_section_84                    2   N/I       0x84       0x85   .absSeg208
+.abs_section_8c                    2   N/I       0x8C       0x8D   .absSeg209
+.abs_section_90                    2   N/I       0x90       0x91   .absSeg210
+.abs_section_92                    2   N/I       0x92       0x93   .absSeg211
+.abs_section_94                    2   N/I       0x94       0x95   .absSeg212
+.abs_section_96                    2   N/I       0x96       0x97   .absSeg213
+.abs_section_98                    2   N/I       0x98       0x99   .absSeg214
+.abs_section_9a                    2   N/I       0x9A       0x9B   .absSeg215
+.abs_section_9c                    2   N/I       0x9C       0x9D   .absSeg216
+.abs_section_9e                    2   N/I       0x9E       0x9F   .absSeg217
+.abs_section_a0                    2   N/I       0xA0       0xA1   .absSeg218
+.abs_section_a2                    2   N/I       0xA2       0xA3   .absSeg219
+.abs_section_a4                    2   N/I       0xA4       0xA5   .absSeg220
+.abs_section_a6                    2   N/I       0xA6       0xA7   .absSeg221
+.abs_section_a8                    2   N/I       0xA8       0xA9   .absSeg222
+.abs_section_aa                    2   N/I       0xAA       0xAB   .absSeg223
+.abs_section_ac                    2   N/I       0xAC       0xAD   .absSeg224
+.abs_section_ae                    2   N/I       0xAE       0xAF   .absSeg225
+.abs_section_c8                    2   N/I       0xC8       0xC9   .absSeg226
+.abs_section_d0                    2   N/I       0xD0       0xD1   .absSeg227
+.abs_section_e8                    2   N/I       0xE8       0xE9   .absSeg228
+.abs_section_144                   2   N/I      0x144      0x145   .absSeg229
+.abs_section_158                   2   N/I      0x158      0x159   .absSeg230
+.abs_section_15a                   2   N/I      0x15A      0x15B   .absSeg231
+.abs_section_15c                   2   N/I      0x15C      0x15D   .absSeg232
+.abs_section_15e                   2   N/I      0x15E      0x15F   .absSeg233
+.abs_section_162                   2   N/I      0x162      0x163   .absSeg234
+.abs_section_184                   2   N/I      0x184      0x185   .absSeg235
+.abs_section_198                   2   N/I      0x198      0x199   .absSeg236
+.abs_section_19a                   2   N/I      0x19A      0x19B   .absSeg237
+.abs_section_19c                   2   N/I      0x19C      0x19D   .absSeg238
+.abs_section_19e                   2   N/I      0x19E      0x19F   .absSeg239
+.abs_section_1a2                   2   N/I      0x1A2      0x1A3   .absSeg240
+.abs_section_1ec                   2   N/I      0x1EC      0x1ED   .absSeg241
+.abs_section_1ee                   2   N/I      0x1EE      0x1EF   .absSeg242
+.abs_section_1f0                   2   N/I      0x1F0      0x1F1   .absSeg243
+.abs_section_1f2                   2   N/I      0x1F2      0x1F3   .absSeg244
+.abs_section_1f4                   2   N/I      0x1F4      0x1F5   .absSeg245
+.abs_section_1f6                   2   N/I      0x1F6      0x1F7   .absSeg246
+.abs_section_1f8                   2   N/I      0x1F8      0x1F9   .absSeg247
+.abs_section_1fa                   2   N/I      0x1FA      0x1FB   .absSeg248
+.abs_section_1fc                   2   N/I      0x1FC      0x1FD   .absSeg249
+.abs_section_210                   2   N/I      0x210      0x211   .absSeg250
+.abs_section_212                   2   N/I      0x212      0x213   .absSeg251
+.abs_section_214                   2   N/I      0x214      0x215   .absSeg252
+.abs_section_216                   2   N/I      0x216      0x217   .absSeg253
+.abs_section_218                   2   N/I      0x218      0x219   .absSeg254
+.abs_section_21a                   2   N/I      0x21A      0x21B   .absSeg255
+.abs_section_222                   2   N/I      0x222      0x223   .absSeg256
+.abs_section_224                   2   N/I      0x224      0x225   .absSeg257
+.abs_section_226                   2   N/I      0x226      0x227   .absSeg258
+.abs_section_22a                   2   N/I      0x22A      0x22B   .absSeg259
+.abs_section_22c                   2   N/I      0x22C      0x22D   .absSeg260
+.abs_section_22e                   2   N/I      0x22E      0x22F   .absSeg261
+.abs_section_232                   2   N/I      0x232      0x233   .absSeg262
+.abs_section_234                   2   N/I      0x234      0x235   .absSeg263
+.abs_section_236                   2   N/I      0x236      0x237   .absSeg264
+.abs_section_270                   2   N/I      0x270      0x271   .absSeg265
+.abs_section_272                   2   N/I      0x272      0x273   .absSeg266
+.abs_section_274                   2   N/I      0x274      0x275   .absSeg267
+.abs_section_276                   2   N/I      0x276      0x277   .absSeg268
+.abs_section_278                   2   N/I      0x278      0x279   .absSeg269
+.abs_section_27a                   2   N/I      0x27A      0x27B   .absSeg270
+.abs_section_27c                   2   N/I      0x27C      0x27D   .absSeg271
+.abs_section_27e                   2   N/I      0x27E      0x27F   .absSeg272
+.bss                               6   R/W      0x800      0x805   RAM
+My_constants                     645     R     0xC13B     0xC3BF   ROM_C000
+My_variables                     508   R/W      0x806      0xA01   RAM
+.common                            2   R/W      0xA02      0xA03   RAM
+keypad.asm._SEC000000            161     R     0xC3C0     0xC460   ROM_C000
+main_menu.asm._SEC000000         176     R     0xC461     0xC510   ROM_C000
+lcddisp.asm._SEC000000            26     R     0xC511     0xC52A   ROM_C000
+password.asm._SEC000000           95     R     0xC52B     0xC589   ROM_C000
+delay.asm._SEC000000              11     R     0xC58A     0xC594   ROM_C000
+RTI.asm._SEC000000               636     R     0xC595     0xC810   ROM_C000
+irq.asm._SEC000000                29     R     0xC811     0xC82D   ROM_C000
+gmt_time.asm._SEC000000          677     R     0xC82E     0xCAD2   ROM_C000
+local_time.asm._SEC000000        677     R     0xCAD3     0xCD77   ROM_C000
+picker_init.asm._SEC000000       1782     R     0xCD78     0xD46D   ROM_C000
+wh_picker.asm._SEC000000        1198     R     0xD46E     0xD91B   ROM_C000
+.vectSeg273_vect                   4     R     0xFFF0     0xFFF3   .vectSeg273
+.vectSeg274_vect                   2     R     0xFFFE     0xFFFF   .vectSeg274
+
+Summary of section sizes per section type:
+READ_ONLY (R):        1922 (dec:     6434)
+READ_WRITE (R/W):      604 (dec:     1540)
+NO_INIT (N/I):         160 (dec:      352)
+
+*********************************************************************************************
+VECTOR-ALLOCATION SECTION
+    Address     InitValue   InitFunction
+---------------------------------------------------------------------------------------------
+     0xFFF0        0xC595   RTI_ISR
+     0xFFF2        0xC811   IRQ_ISR
+     0xFFFE        0xC000   _Startup
+
+*********************************************************************************************
+OBJECT-ALLOCATION SECTION
+     Name               Module                 Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+MODULE:                 -- main.asm.o --
+- PROCEDURES:
+     Entry                                     C000       E      14       0   .init       
+     _Startup                                  C000       0       0       0   .init       
+- VARIABLES:
+     container_array                            806      64     100       4   My_variables
+     container_data                             86A       1       1       8   My_variables
+     container_index                            86B       1       1      10   My_variables
+     cont_index_hundreds                        86C       1       1       9   My_variables
+     cont_index_tens                            86D       1       1       9   My_variables
+     cont_index_ones                            86E       1       1       9   My_variables
+     cont_index_remainder                       86F       1       1       8   My_variables
+     added_cont_flag                            870       1       1       4   My_variables
+     removed_cont_flag                          871       1       1       4   My_variables
+     add_cont_song_flag                         872       1       1       4   My_variables
+     remove_cont_song_flag                      873       1       1       4   My_variables
+     cont_check                                 874       1       1       4   My_variables
+     add_B_flag                                 875       1       1       3   My_variables
+     add_B_flag1                                876       1       1       1   My_variables
+     disp                                       877      21      33       2   My_variables
+     wh_picker_msg                              898      21      33      33   My_variables
+     wh_picker_msg_0                            8B9      21      33      37   My_variables
+     wh_picker_msg_1                            8DA      21      33      37   My_variables
+     wh_picker_msg_2                            8FB      21      33      43   My_variables
+     KEY_PRESSED                                91C       1       1      30   My_variables
+     sub_menu                                   91D       1       1       0   My_variables
+     wh_password                                91E       4       4       5   My_variables
+     wh_password1                               922       4       4       4   My_variables
+     wh_password2                               926       4       4       4   My_variables
+     wh_password3                               92A       4       4       4   My_variables
+     wh_password4                               92E       4       4       4   My_variables
+     password_entered                           932       4       4       2   My_variables
+     counter                                    936       2       2       4   My_variables
+     OnesDigit                                  938       1       1      13   My_variables
+     TensDigit                                  939       1       1      13   My_variables
+     HundredsDigit                              93A       1       1       4   My_variables
+     remainder                                  93B       2       2      13   My_variables
+     day                                        93D       1       1       6   My_variables
+     hours                                      93E       1       1       6   My_variables
+     minutes                                    93F       1       1       6   My_variables
+     seconds                                    940       1       1       7   My_variables
+     local_time_msg_1                           941      21      33      43   My_variables
+     local_time_msg_2                           962      2C      44      70   My_variables
+     time_digits                                98E       5       5      17   My_variables
+     gmt_counter                                993       2       2       4   My_variables
+     gmt_OnesDigit                              995       1       1      13   My_variables
+     gmt_TensDigit                              996       1       1      13   My_variables
+     gmt_HundredsDigit                          997       1       1       4   My_variables
+     gmt_remainder                              998       2       2      13   My_variables
+     gmt_day                                    99A       1       1       6   My_variables
+     gmt_hours                                  99B       1       1       6   My_variables
+     gmt_minutes                                99C       1       1       6   My_variables
+     gmt_seconds                                99D       1       1       5   My_variables
+     gmt_time_msg_1                             99E      21      33      43   My_variables
+     gmt_time_msg_2                             9BF      21      33      69   My_variables
+     gmt_time_digits                            9E0       5       5      17   My_variables
+     auto_dc_motor_flag                         9E5       1       1       1   My_variables
+     man_dc_motor_flag                          9E6       1       1       1   My_variables
+     dc_count                                   9E7       1       1       1   My_variables
+     dc_time_on                                 9E8       1       1       1   My_variables
+     dc_time_off                                9E9       1       1       1   My_variables
+     prev_key                                   9EA       1       1       1   My_variables
+     dc_delay_count                             9EB       2       2       1   My_variables
+     bobs_flag                                  9ED       1       1       3   My_variables
+     backdoor_flag                              9EE       1       1       3   My_variables
+     step_delay_FLAG                            9EF       1       1       3   My_variables
+     STEP_COUNT                                 9F0       1       1       7   My_variables
+     clear_lcd_flag                             9F1       1       1       0   My_variables
+     irq_pressed                                9F2       1       1       4   My_variables
+     pb_pressed                                 9F3       1       1       4   My_variables
+     pb_pressed_debounce                        9F4       2       2       2   My_variables
+     IRQ_to_PW_flag                             9F6       1       1       1   My_variables
+     irq_time_stamp                             9F7       2       2       2   My_variables
+     note_we_on                                 9F9       2       2      16   My_variables
+     toggle_note                                9FB       1       1       4   My_variables
+     toggle_note2                               9FC       1       1       4   My_variables
+     toggle_note3                               9FD       1       1       4   My_variables
+     toggle_note4                               9FE       1       1       4   My_variables
+     toggle_count                               9FF       2       2      14   My_variables
+     KeypressFlag                               A01       1       1       4   My_variables
+     m_seq                                     C13B       6       6       2   My_constants
+     KEYPAD_ROW                                C141       4       4       4   My_constants
+     KEYPAD_KEYS                               C145      10      16       4   My_constants
+     KEYPAD_VALUES                             C155      10      16       1   My_constants
+     song1                                     C165       7       7       2   My_constants
+     song1_backwards                           C16C       7       7       2   My_constants
+     song2                                     C173       7       7       2   My_constants
+     song3                                     C17A       7       7       2   My_constants
+     MAIN_MENU_MSG_1                           C181      21      33       1   My_constants
+     MAIN_MENU_MSG_2                           C1A2      21      33       1   My_constants
+     MAIN_MENU_MSG_3                           C1C3      21      33       1   My_constants
+     MAIN_MENU_MSG_5                           C1E4      21      33       1   My_constants
+     MAIN_MENU_MSG_4                           C205      21      33       1   My_constants
+     fire_message                              C226      20      32       1   My_constants
+     start_msg                                 C246      21      33       1   My_constants
+     inc_password_msg                          C267      21      33       1   My_constants
+     msg_for_bob                               C288      21      33       1   My_constants
+     backdoor_msg                              C2A9      21      33       1   My_constants
+     clear_LCD_screen                          C2CA      21      33       0   My_constants
+     switch_warning_msg                        C2EB      21      33       1   My_constants
+     switch_warning_msg2                       C30C      21      33       1   My_constants
+     med_or_large_msg                          C32D      21      33       1   My_constants
+     heavy_or_light_msg                        C34E      21      33       1   My_constants
+     fragile_or_rugged_msg                     C36F      21      33       1   My_constants
+     day_char_1                                C390       8       8       2   My_constants
+     day_char_2                                C398       8       8       2   My_constants
+     day_char_3                                C3A0       8       8       2   My_constants
+     gmt_day_char_1                            C3A8       8       8       2   My_constants
+     gmt_day_char_2                            C3B0       8       8       2   My_constants
+     gmt_day_char_3                            C3B8       8       8       2   My_constants
+- LABELS:
+     __SEG_END_SSTACK                           800       0       0       1               
+     RTIFLG                                      37       0       0       1   .text       
+     RTIENA                                      38       0       0       1   .text       
+     RTICTL                                      3B       0       0       1   .text       
+     Port_t                                     240       0       0      15   .text       
+     Port_t_ddr                                 242       0       0       1   .text       
+     Port_s                                     248       0       0      35   .text       
+     Port_s_ddr                                 24A       0       0       1   .text       
+     Port_p                                     258       0       0       4   .text       
+     Port_p_ddr                                 25A       0       0       1   .text       
+     Port_u                                     268       0       0       9   .text       
+MODULE:                 -- lcddisp.c.o --
+- PROCEDURES:
+     delay_ms                                  C00E      17      23       5   NON_BANKED  
+     init_LCD                                  C025      52      82       1   NON_BANKED  
+     display_string                            C077      38      56       1   NON_BANKED  
+     Delay                                     C0AF      1F      31       1   NON_BANKED  
+     epulse                                    C0CE      24      36       3   NON_BANKED  
+     sendCommand                               C0F2       F      15       7   NON_BANKED  
+- VARIABLES:
+     data                                       800       2       2       4   .bss        
+MODULE:                 -- mc9s12e128.c.o --
+- PROCEDURES:
+- VARIABLES:
+     _PORTE                                       8       1       1       0   .abs_section_8
+     _DDRE                                        9       1       1       0   .abs_section_9
+     _PEAR                                        A       1       1       0   .abs_section_a
+     _MODE                                        B       1       1       0   .abs_section_b
+     _PUCR                                        C       1       1       0   .abs_section_c
+     _RDRIV                                       D       1       1       0   .abs_section_d
+     _EBICTL                                      E       1       1       0   .abs_section_e
+     _INITRM                                     10       1       1       0   .abs_section_10
+     _INITRG                                     11       1       1       0   .abs_section_11
+     _MISC                                       13       1       1       0   .abs_section_13
+     _ITCR                                       15       1       1       0   .abs_section_15
+     _ITEST                                      16       1       1       0   .abs_section_16
+     _VREGCTRL                                   19       1       1       0   .abs_section_19
+     _MEMSIZ0                                    1C       1       1       0   .abs_section_1c
+     _MEMSIZ1                                    1D       1       1       0   .abs_section_1d
+     _INTCR                                      1E       1       1       0   .abs_section_1e
+     _HPRIO                                      1F       1       1       0   .abs_section_1f
+     _DBGC1                                      20       1       1       0   .abs_section_20
+     _DBGSC                                      21       1       1       0   .abs_section_21
+     _DBGCNT                                     24       1       1       0   .abs_section_24
+     _DBGCCX                                     25       1       1       0   .abs_section_25
+     _DBGC2                                      28       1       1       0   .abs_section_28
+     _DBGC3                                      29       1       1       0   .abs_section_29
+     _DBGCAX                                     2A       1       1       0   .abs_section_2a
+     _DBGCBX                                     2D       1       1       0   .abs_section_2d
+     _PPAGE                                      30       1       1       0   .abs_section_30
+     _PORTK                                      32       1       1       0   .abs_section_32
+     _DDRK                                       33       1       1       0   .abs_section_33
+     _SYNR                                       34       1       1       0   .abs_section_34
+     _REFDV                                      35       1       1       0   .abs_section_35
+     _CRGFLG                                     37       1       1       0   .abs_section_37
+     _CRGINT                                     38       1       1       0   .abs_section_38
+     _CLKSEL                                     39       1       1       0   .abs_section_39
+     _PLLCTL                                     3A       1       1       0   .abs_section_3a
+     _RTICTL                                     3B       1       1       0   .abs_section_3b
+     _COPCTL                                     3C       1       1       0   .abs_section_3c
+     _ARMCOP                                     3F       1       1       0   .abs_section_3f
+     _TIM0_TIOS                                  40       1       1       0   .abs_section_40
+     _TIM0_CFORC                                 41       1       1       0   .abs_section_41
+     _TIM0_OC7M                                  42       1       1       0   .abs_section_42
+     _TIM0_OC7D                                  43       1       1       0   .abs_section_43
+     _TIM0_TSCR1                                 46       1       1       0   .abs_section_46
+     _TIM0_TTOV                                  47       1       1       0   .abs_section_47
+     _TIM0_TCTL1                                 48       1       1       0   .abs_section_48
+     _TIM0_TCTL3                                 4A       1       1       0   .abs_section_4a
+     _TIM0_TIE                                   4C       1       1       0   .abs_section_4c
+     _TIM0_TSCR2                                 4D       1       1       0   .abs_section_4d
+     _TIM0_TFLG1                                 4E       1       1       0   .abs_section_4e
+     _TIM0_TFLG2                                 4F       1       1       0   .abs_section_4f
+     _TIM0_PACTL                                 60       1       1       0   .abs_section_60
+     _TIM0_PAFLG                                 61       1       1       0   .abs_section_61
+     _ATDSTAT0                                   86       1       1       1   .abs_section_86
+     _ATDTEST1                                   89       1       1       0   .abs_section_89
+     _ATDSTAT2                                   8A       1       1       0   .abs_section_8a
+     _ATDSTAT1                                   8B       1       1       0   .abs_section_8b
+     _PORTAD0                                    8E       1       1       0   .abs_section_8e
+     _PORTAD1                                    8F       1       1       0   .abs_section_8f
+     _SCI0CR1                                    CA       1       1       0   .abs_section_ca
+     _SCI0CR2                                    CB       1       1       0   .abs_section_cb
+     _SCI0SR1                                    CC       1       1       0   .abs_section_cc
+     _SCI0SR2                                    CD       1       1       0   .abs_section_cd
+     _SCI0DRH                                    CE       1       1       0   .abs_section_ce
+     _SCI0DRL                                    CF       1       1       0   .abs_section_cf
+     _SCI1CR1                                    D2       1       1       0   .abs_section_d2
+     _SCI1CR2                                    D3       1       1       0   .abs_section_d3
+     _SCI1SR1                                    D4       1       1       0   .abs_section_d4
+     _SCI1SR2                                    D5       1       1       0   .abs_section_d5
+     _SCI1DRH                                    D6       1       1       0   .abs_section_d6
+     _SCI1DRL                                    D7       1       1       0   .abs_section_d7
+     _SPICR1                                     D8       1       1       0   .abs_section_d8
+     _SPICR2                                     D9       1       1       0   .abs_section_d9
+     _SPIBR                                      DA       1       1       0   .abs_section_da
+     _SPISR                                      DB       1       1       0   .abs_section_db
+     _SPIDR                                      DD       1       1       0   .abs_section_dd
+     _IBAD                                       E0       1       1       0   .abs_section_e0
+     _IBFD                                       E1       1       1       0   .abs_section_e1
+     _IBCR                                       E2       1       1       0   .abs_section_e2
+     _IBSR                                       E3       1       1       0   .abs_section_e3
+     _IBDR                                       E4       1       1       0   .abs_section_e4
+     _SCI2CR1                                    EA       1       1       0   .abs_section_ea
+     _SCI2CR2                                    EB       1       1       0   .abs_section_eb
+     _SCI2SR1                                    EC       1       1       0   .abs_section_ec
+     _SCI2SR2                                    ED       1       1       0   .abs_section_ed
+     _SCI2DRH                                    EE       1       1       0   .abs_section_ee
+     _SCI2DRL                                    EF       1       1       0   .abs_section_ef
+     _DAC0_DACC0                                 F0       1       1       0   .abs_section_f0
+     _DAC0_DACDLeft                              F2       1       1       0   .abs_section_f2
+     _DAC0_DACDRight                             F3       1       1       0   .abs_section_f3
+     _DAC1_DACC0                                 F4       1       1       0   .abs_section_f4
+     _DAC1_DACDLeft                              F6       1       1       0   .abs_section_f6
+     _DAC1_DACDRight                             F7       1       1       0   .abs_section_f7
+     _FCLKDIV                                   100       1       1       0   .abs_section_100
+     _FSEC                                      101       1       1       0   .abs_section_101
+     _FCNFG                                     103       1       1       0   .abs_section_103
+     _FPROT                                     104       1       1       0   .abs_section_104
+     _FSTAT                                     105       1       1       0   .abs_section_105
+     _FCMD                                      106       1       1       0   .abs_section_106
+     _TIM1_TIOS                                 140       1       1       0   .abs_section_140
+     _TIM1_CFORC                                141       1       1       0   .abs_section_141
+     _TIM1_OC7M                                 142       1       1       0   .abs_section_142
+     _TIM1_OC7D                                 143       1       1       0   .abs_section_143
+     _TIM1_TSCR1                                146       1       1       0   .abs_section_146
+     _TIM1_TTOV                                 147       1       1       0   .abs_section_147
+     _TIM1_TCTL1                                148       1       1       0   .abs_section_148
+     _TIM1_TCTL3                                14A       1       1       0   .abs_section_14a
+     _TIM1_TIE                                  14C       1       1       0   .abs_section_14c
+     _TIM1_TSCR2                                14D       1       1       0   .abs_section_14d
+     _TIM1_TFLG1                                14E       1       1       0   .abs_section_14e
+     _TIM1_TFLG2                                14F       1       1       0   .abs_section_14f
+     _TIM1_PACTL                                160       1       1       0   .abs_section_160
+     _TIM1_PAFLG                                161       1       1       0   .abs_section_161
+     _TIM2_TIOS                                 180       1       1       0   .abs_section_180
+     _TIM2_CFORC                                181       1       1       0   .abs_section_181
+     _TIM2_OC7M                                 182       1       1       0   .abs_section_182
+     _TIM2_OC7D                                 183       1       1       0   .abs_section_183
+     _TIM2_TSCR1                                186       1       1       0   .abs_section_186
+     _TIM2_TTOV                                 187       1       1       0   .abs_section_187
+     _TIM2_TCTL1                                188       1       1       0   .abs_section_188
+     _TIM2_TCTL3                                18A       1       1       0   .abs_section_18a
+     _TIM2_TIE                                  18C       1       1       0   .abs_section_18c
+     _TIM2_TSCR2                                18D       1       1       0   .abs_section_18d
+     _TIM2_TFLG1                                18E       1       1       0   .abs_section_18e
+     _TIM2_TFLG2                                18F       1       1       0   .abs_section_18f
+     _TIM2_PACTL                                1A0       1       1       0   .abs_section_1a0
+     _TIM2_PAFLG                                1A1       1       1       0   .abs_section_1a1
+     _PWME                                      1E0       1       1       0   .abs_section_1e0
+     _PWMPOL                                    1E1       1       1       0   .abs_section_1e1
+     _PWMCLK                                    1E2       1       1       0   .abs_section_1e2
+     _PWMPRCLK                                  1E3       1       1       0   .abs_section_1e3
+     _PWMCAE                                    1E4       1       1       0   .abs_section_1e4
+     _PWMCTL                                    1E5       1       1       0   .abs_section_1e5
+     _PWMSCLA                                   1E8       1       1       0   .abs_section_1e8
+     _PWMSCLB                                   1E9       1       1       0   .abs_section_1e9
+     _PWMSDN                                    1FE       1       1       0   .abs_section_1fe
+     _PMFCFG0                                   200       1       1       0   .abs_section_200
+     _PMFCFG1                                   201       1       1       0   .abs_section_201
+     _PMFCFG2                                   202       1       1       0   .abs_section_202
+     _PMFCFG3                                   203       1       1       0   .abs_section_203
+     _PMFFCTL                                   204       1       1       0   .abs_section_204
+     _PMFFPIN                                   205       1       1       0   .abs_section_205
+     _PMFFSTA                                   206       1       1       0   .abs_section_206
+     _PMFQSMP                                   207       1       1       0   .abs_section_207
+     _PMFDMPA                                   208       1       1       0   .abs_section_208
+     _PMFDMPB                                   209       1       1       0   .abs_section_209
+     _PMFDMPC                                   20A       1       1       0   .abs_section_20a
+     _PMFOUTC                                   20C       1       1       0   .abs_section_20c
+     _PMFOUTB                                   20D       1       1       0   .abs_section_20d
+     _PMFDTMS                                   20E       1       1       0   .abs_section_20e
+     _PMFCCTL                                   20F       1       1       0   .abs_section_20f
+     _PMFENCA                                   220       1       1       0   .abs_section_220
+     _PMFFQCA                                   221       1       1       0   .abs_section_221
+     _PMFENCB                                   228       1       1       0   .abs_section_228
+     _PMFFQCB                                   229       1       1       0   .abs_section_229
+     _PMFENCC                                   230       1       1       0   .abs_section_230
+     _PMFFQCC                                   231       1       1       0   .abs_section_231
+     _PTT                                       240       1       1       2   .abs_section_240
+     _PTIT                                      241       1       1       0   .abs_section_241
+     _DDRT                                      242       1       1       0   .abs_section_242
+     _RDRT                                      243       1       1       0   .abs_section_243
+     _PERT                                      244       1       1       0   .abs_section_244
+     _PPST                                      245       1       1       0   .abs_section_245
+     _PTS                                       248       1       1       0   .abs_section_248
+     _PTIS                                      249       1       1       0   .abs_section_249
+     _DDRS                                      24A       1       1       0   .abs_section_24a
+     _RDRS                                      24B       1       1       0   .abs_section_24b
+     _PERS                                      24C       1       1       0   .abs_section_24c
+     _PPSS                                      24D       1       1       0   .abs_section_24d
+     _WOMS                                      24E       1       1       0   .abs_section_24e
+     _PTM                                       250       1       1       5   .abs_section_250
+     _PTIM                                      251       1       1       0   .abs_section_251
+     _DDRM                                      252       1       1       1   .abs_section_252
+     _RDRM                                      253       1       1       0   .abs_section_253
+     _PERM                                      254       1       1       0   .abs_section_254
+     _PPSM                                      255       1       1       0   .abs_section_255
+     _WOMM                                      256       1       1       0   .abs_section_256
+     _PTP                                       258       1       1       0   .abs_section_258
+     _PTIP                                      259       1       1       0   .abs_section_259
+     _DDRP                                      25A       1       1       0   .abs_section_25a
+     _RDRP                                      25B       1       1       0   .abs_section_25b
+     _PERP                                      25C       1       1       0   .abs_section_25c
+     _PPSP                                      25D       1       1       0   .abs_section_25d
+     _PTQ                                       260       1       1       0   .abs_section_260
+     _PTIQ                                      261       1       1       0   .abs_section_261
+     _DDRQ                                      262       1       1       0   .abs_section_262
+     _RDRQ                                      263       1       1       0   .abs_section_263
+     _PERQ                                      264       1       1       0   .abs_section_264
+     _PPSQ                                      265       1       1       0   .abs_section_265
+     _PTU                                       268       1       1       0   .abs_section_268
+     _PTIU                                      269       1       1       0   .abs_section_269
+     _DDRU                                      26A       1       1       0   .abs_section_26a
+     _RDRU                                      26B       1       1       0   .abs_section_26b
+     _PERU                                      26C       1       1       0   .abs_section_26c
+     _PPSU                                      26D       1       1       0   .abs_section_26d
+     _MODRR                                     26E       1       1       0   .abs_section_26e
+     _PORTAB                                      0       2       2       0   .abs_section_0
+     _DDRAB                                       2       2       2       0   .abs_section_2
+     _PARTID                                     1A       2       2       0   .abs_section_1a
+     _DBGTB                                      22       2       2       0   .abs_section_22
+     _DBGCC                                      26       2       2       0   .abs_section_26
+     _DBGCA                                      2B       2       2       0   .abs_section_2b
+     _DBGCB                                      2E       2       2       0   .abs_section_2e
+     _TIM0_TCNT                                  44       2       2       0   .abs_section_44
+     _TIM0_TC4                                   58       2       2       0   .abs_section_58
+     _TIM0_TC5                                   5A       2       2       0   .abs_section_5a
+     _TIM0_TC6                                   5C       2       2       0   .abs_section_5c
+     _TIM0_TC7                                   5E       2       2       0   .abs_section_5e
+     _TIM0_PACNT                                 62       2       2       0   .abs_section_62
+     _ATDCTL23                                   82       2       2       1   .abs_section_82
+     _ATDCTL45                                   84       2       2       1   .abs_section_84
+     _ATDDIEN                                    8C       2       2       0   .abs_section_8c
+     _ATDDR0                                     90       2       2       1   .abs_section_90
+     _ATDDR1                                     92       2       2       0   .abs_section_92
+     _ATDDR2                                     94       2       2       0   .abs_section_94
+     _ATDDR3                                     96       2       2       0   .abs_section_96
+     _ATDDR4                                     98       2       2       0   .abs_section_98
+     _ATDDR5                                     9A       2       2       0   .abs_section_9a
+     _ATDDR6                                     9C       2       2       0   .abs_section_9c
+     _ATDDR7                                     9E       2       2       0   .abs_section_9e
+     _ATDDR8                                     A0       2       2       0   .abs_section_a0
+     _ATDDR9                                     A2       2       2       0   .abs_section_a2
+     _ATDDR10                                    A4       2       2       0   .abs_section_a4
+     _ATDDR11                                    A6       2       2       0   .abs_section_a6
+     _ATDDR12                                    A8       2       2       0   .abs_section_a8
+     _ATDDR13                                    AA       2       2       0   .abs_section_aa
+     _ATDDR14                                    AC       2       2       0   .abs_section_ac
+     _ATDDR15                                    AE       2       2       0   .abs_section_ae
+     _SCI0BD                                     C8       2       2       0   .abs_section_c8
+     _SCI1BD                                     D0       2       2       0   .abs_section_d0
+     _SCI2BD                                     E8       2       2       0   .abs_section_e8
+     _TIM1_TCNT                                 144       2       2       0   .abs_section_144
+     _TIM1_TC4                                  158       2       2       0   .abs_section_158
+     _TIM1_TC5                                  15A       2       2       0   .abs_section_15a
+     _TIM1_TC6                                  15C       2       2       0   .abs_section_15c
+     _TIM1_TC7                                  15E       2       2       0   .abs_section_15e
+     _TIM1_PACNT                                162       2       2       0   .abs_section_162
+     _TIM2_TCNT                                 184       2       2       0   .abs_section_184
+     _TIM2_TC4                                  198       2       2       0   .abs_section_198
+     _TIM2_TC5                                  19A       2       2       0   .abs_section_19a
+     _TIM2_TC6                                  19C       2       2       0   .abs_section_19c
+     _TIM2_TC7                                  19E       2       2       0   .abs_section_19e
+     _TIM2_PACNT                                1A2       2       2       0   .abs_section_1a2
+     _PWMCNT01                                  1EC       2       2       0   .abs_section_1ec
+     _PWMCNT23                                  1EE       2       2       0   .abs_section_1ee
+     _PWMCNT45                                  1F0       2       2       0   .abs_section_1f0
+     _PWMPER01                                  1F2       2       2       0   .abs_section_1f2
+     _PWMPER23                                  1F4       2       2       0   .abs_section_1f4
+     _PWMPER45                                  1F6       2       2       0   .abs_section_1f6
+     _PWMDTY01                                  1F8       2       2       0   .abs_section_1f8
+     _PWMDTY23                                  1FA       2       2       0   .abs_section_1fa
+     _PWMDTY45                                  1FC       2       2       0   .abs_section_1fc
+     _PMFVAL0                                   210       2       2       0   .abs_section_210
+     _PMFVAL1                                   212       2       2       0   .abs_section_212
+     _PMFVAL2                                   214       2       2       0   .abs_section_214
+     _PMFVAL3                                   216       2       2       0   .abs_section_216
+     _PMFVAL4                                   218       2       2       0   .abs_section_218
+     _PMFVAL5                                   21A       2       2       0   .abs_section_21a
+     _PMFCNTA                                   222       2       2       0   .abs_section_222
+     _PMFMODA                                   224       2       2       0   .abs_section_224
+     _PMFDTMA                                   226       2       2       0   .abs_section_226
+     _PMFCNTB                                   22A       2       2       0   .abs_section_22a
+     _PMFMODB                                   22C       2       2       0   .abs_section_22c
+     _PMFDTMB                                   22E       2       2       0   .abs_section_22e
+     _PMFCNTC                                   232       2       2       0   .abs_section_232
+     _PMFMODC                                   234       2       2       0   .abs_section_234
+     _PMFDTMC                                   236       2       2       0   .abs_section_236
+     _PTAD                                      270       2       2       4   .abs_section_270
+     _PTIAD                                     272       2       2       0   .abs_section_272
+     _DDRAD                                     274       2       2       1   .abs_section_274
+     _RDRAD                                     276       2       2       0   .abs_section_276
+     _PERAD                                     278       2       2       0   .abs_section_278
+     _PPSAD                                     27A       2       2       0   .abs_section_27a
+     _PIEAD                                     27C       2       2       0   .abs_section_27c
+     _PIFAD                                     27E       2       2       0   .abs_section_27e
+MODULE:                 -- potentiometer.c.o --
+- PROCEDURES:
+     read_pot                                  C101      18      24       2   NON_BANKED  
+- VARIABLES:
+     pot_value                                  A02       2       2       9   .common     
+MODULE:                 -- keypad.asm.o --
+- PROCEDURES:
+     read_keypad                               C3C0      12      18      28   keypad.asm._SEC000000
+     scan_1                                    C3D2       9       9       0   keypad.asm._SEC000000
+     read_2                                    C3DB      10      16       0   keypad.asm._SEC000000
+     scan_2                                    C3EB       9       9       0   keypad.asm._SEC000000
+     read_3                                    C3F4      10      16       0   keypad.asm._SEC000000
+     scan_3                                    C404       9       9       0   keypad.asm._SEC000000
+     read_4                                    C40D       C      12       0   keypad.asm._SEC000000
+     scan_4                                    C419       D      13       0   keypad.asm._SEC000000
+     return_key                                C426      12      18       0   keypad.asm._SEC000000
+     no_key_pressed                            C438       8       8       0   keypad.asm._SEC000000
+     debounce                                  C440       1       1       1   keypad.asm._SEC000000
+     debounce1                                 C441      17      23       0   keypad.asm._SEC000000
+     delay_1_ms                                C458       4       4       4   keypad.asm._SEC000000
+     delay_loop                                C45C       5       5       0   keypad.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- main_menu.asm.o --
+- PROCEDURES:
+     reading_pot                               C461       0       0       0   main_menu.asm._SEC000000
+     main_menu                                 C461      2C      44       3   main_menu.asm._SEC000000
+     MENU_2                                    C48D      1C      28       0   main_menu.asm._SEC000000
+     MENU_3                                    C4A9      1E      30       0   main_menu.asm._SEC000000
+     MENU_4                                    C4C7      20      32       0   main_menu.asm._SEC000000
+     MENU_5                                    C4E7      15      21       0   main_menu.asm._SEC000000
+     display_backdoor_msg                      C4FC      15      21       0   main_menu.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- lcddisp.asm.o --
+- PROCEDURES:
+     display_to_lcd                            C511       6       6      46   lcddisp.asm._SEC000000
+     display_to_lcd_loop                       C517      14      20       0   lcddisp.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- password.asm.o --
+- PROCEDURES:
+     password                                  C52B       2       2       3   password.asm._SEC000000
+     password_start                            C52D       9       9       0   password.asm._SEC000000
+     read_password                             C536      17      23       0   password.asm._SEC000000
+     check_password                            C54D      2C      44       0   password.asm._SEC000000
+     wrong_password                            C579       E      14       0   password.asm._SEC000000
+     exit_read_password                        C587       3       3       0   password.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- delay.asm.o --
+- PROCEDURES:
+     rti_delay                                 C58A       4       4      48   delay.asm._SEC000000
+     while_seconds_doesnt_change               C58E       7       7       0   delay.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- RTI.asm.o --
+- PROCEDURES:
+     RTI_ISR                                   C595      51      81       0   RTI.asm._SEC000000
+     done_with_local_time                      C5E6      51      81       0   RTI.asm._SEC000000
+     done_with_gmt_time                        C637       B      11       0   RTI.asm._SEC000000
+     add_continue_song                         C642      10      16       0   RTI.asm._SEC000000
+     send_note1                                C652      3C      60       0   RTI.asm._SEC000000
+     reset3                                    C68E       5       5       0   RTI.asm._SEC000000
+     remove_cont                               C693       B      11       0   RTI.asm._SEC000000
+     done3                                     C693       0       0       0   RTI.asm._SEC000000
+     remove_continue_song                      C69E      10      16       0   RTI.asm._SEC000000
+     send_note2                                C6AE      3C      60       0   RTI.asm._SEC000000
+     reset4                                    C6EA       5       5       0   RTI.asm._SEC000000
+     irq_button                                C6EF       B      11       0   RTI.asm._SEC000000
+     done4                                     C6EF       0       0       0   RTI.asm._SEC000000
+     continue_song                             C6FA      14      20       0   RTI.asm._SEC000000
+     send_note                                 C70E      43      67       0   RTI.asm._SEC000000
+     reset                                     C751       5       5       0   RTI.asm._SEC000000
+     push_button                               C756       B      11       0   RTI.asm._SEC000000
+     done                                      C756       0       0       0   RTI.asm._SEC000000
+     pb_debounce                               C761      1F      31       0   RTI.asm._SEC000000
+     check_keypad                              C780      17      23       0   RTI.asm._SEC000000
+     send_beep                                 C797      36      54       0   RTI.asm._SEC000000
+     reset2                                    C7CD       5       5       0   RTI.asm._SEC000000
+     turn_off_led                              C7D2      14      20       0   RTI.asm._SEC000000
+     done2                                     C7D2       0       0       0   RTI.asm._SEC000000
+     dc_motor_delay                            C7E6       9       9       0   RTI.asm._SEC000000
+     display_backdoor_msg                      C7EF       5       5       0   RTI.asm._SEC000000
+     aalans_stepper                            C7F4      18      24       0   RTI.asm._SEC000000
+     end2                                      C80C       5       5       0   RTI.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- irq.asm.o --
+- PROCEDURES:
+     IRQ_ISR                                   C811      1D      29       0   irq.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- SendsChr.c.o --
+- PROCEDURES:
+     SendsChr                                  C119       8       8       4   NON_BANKED  
+     PlayTone                                  C121      1A      26       4   NON_BANKED  
+- VARIABLES:
+     tone                                       802       2       2       2   .bss        
+     tone_count                                 804       2       2       3   .bss        
+MODULE:                 -- gmt_time.asm.o --
+- PROCEDURES:
+     gmt_time                                  C82E       3       3       1   gmt_time.asm._SEC000000
+     gdisp_time_day                            C831     128     296       0   gmt_time.asm._SEC000000
+     gget_first_hours_digit                    C959      12      18       0   gmt_time.asm._SEC000000
+     gcheck_if_higher_than_2                   C96B      12      18       0   gmt_time.asm._SEC000000
+     gget_2nd_hours_digit                      C97D       7       7       0   gmt_time.asm._SEC000000
+     gsecond_digit_less_than_2                 C984      1B      27       0   gmt_time.asm._SEC000000
+     gcompare_digit_to_9                       C99F      14      20       0   gmt_time.asm._SEC000000
+     gsecond_digit_could_be_2                  C9B3      1B      27       0   gmt_time.asm._SEC000000
+     gcheck_if_3_or_higher                     C9CE      12      18       0   gmt_time.asm._SEC000000
+     gfirst_minutes_digit                      C9E0      1B      27       0   gmt_time.asm._SEC000000
+     gcontinue_read_1st_minute                 C9FB      12      18       0   gmt_time.asm._SEC000000
+     gsecond_minutes_digit                     CA0D      1B      27       0   gmt_time.asm._SEC000000
+     gcontinue_read_2nd_minute                 CA28      12      18       0   gmt_time.asm._SEC000000
+     gread_day_1                               CA3A      1B      27       0   gmt_time.asm._SEC000000
+     gcontinue_read_1st_day                    CA55      2B      43       0   gmt_time.asm._SEC000000
+     gconfirm_day                              CA80      25      37       0   gmt_time.asm._SEC000000
+     gcontinue_confirm_day                     CAA5      2A      42       0   gmt_time.asm._SEC000000
+     exit_gmt_time                             CACF       4       4       0   gmt_time.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- local_time.asm.o --
+- PROCEDURES:
+     local_time                                CAD3       3       3       2   local_time.asm._SEC000000
+     disp_time_day                             CAD6     128     296       0   local_time.asm._SEC000000
+     get_first_hours_digit                     CBFE      12      18       0   local_time.asm._SEC000000
+     check_if_higher_than_2                    CC10      12      18       0   local_time.asm._SEC000000
+     get_2nd_hours_digit                       CC22       7       7       0   local_time.asm._SEC000000
+     second_digit_less_than_2                  CC29      1B      27       0   local_time.asm._SEC000000
+     compare_digit_to_9                        CC44      14      20       0   local_time.asm._SEC000000
+     second_digit_could_be_2                   CC58      1B      27       0   local_time.asm._SEC000000
+     check_if_3_or_higher                      CC73      12      18       0   local_time.asm._SEC000000
+     first_minutes_digit                       CC85      1B      27       0   local_time.asm._SEC000000
+     continue_read_1st_minute                  CCA0      12      18       0   local_time.asm._SEC000000
+     second_minutes_digit                      CCB2      1B      27       0   local_time.asm._SEC000000
+     continue_read_2nd_minute                  CCCD      12      18       0   local_time.asm._SEC000000
+     read_day_1                                CCDF      1B      27       0   local_time.asm._SEC000000
+     continue_read_1st_day                     CCFA      2B      43       0   local_time.asm._SEC000000
+     confirm_day                               CD25      25      37       0   local_time.asm._SEC000000
+     continue_confirm_day                      CD4A      2A      42       0   local_time.asm._SEC000000
+     exit_local_time                           CD74       4       4       0   local_time.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- picker_init.asm.o --
+- PROCEDURES:
+     init                                      CD78     16B     363       1   picker_init.asm._SEC000000
+     clr_storage                               CEE3     58B    1419       0   picker_init.asm._SEC000000
+- VARIABLES:
+MODULE:                 -- wh_picker.asm.o --
+- PROCEDURES:
+     checking_pot                              D46E       0       0       0   wh_picker.asm._SEC000000
+     wh_picker                                 D46E      77     119       2   wh_picker.asm._SEC000000
+     inc_cont_index                            D4E5      4A      74       0   wh_picker.asm._SEC000000
+     WH_MENU_2                                 D52F      8A     138       0   wh_picker.asm._SEC000000
+     dec_cont_index                            D5B9      4A      74       0   wh_picker.asm._SEC000000
+     WH_MENU_3                                 D603      6C     108       0   wh_picker.asm._SEC000000
+     first_time                                D66F       5       5       0   wh_picker.asm._SEC000000
+     after_first_time                          D674       3       3       0   wh_picker.asm._SEC000000
+     next_container3                           D677       9       9       0   wh_picker.asm._SEC000000
+     at_container3                             D680      10      16       0   wh_picker.asm._SEC000000
+     display_its_big                           D690       5       5       0   wh_picker.asm._SEC000000
+     next_disp                                 D695      10      16       0   wh_picker.asm._SEC000000
+     display_its_light                         D6A5       5       5       0   wh_picker.asm._SEC000000
+     next_disp2                                D6AA      10      16       0   wh_picker.asm._SEC000000
+     display_its_rugged                        D6BA       5       5       0   wh_picker.asm._SEC000000
+     next_disp3                                D6BF       4       4       0   wh_picker.asm._SEC000000
+     switch_check                              D6C3      17      23       0   wh_picker.asm._SEC000000
+     switch_check2                             D6DA      1A      26       0   wh_picker.asm._SEC000000
+     medium_or_large                           D6F4      1A      26       0   wh_picker.asm._SEC000000
+     set_medium                                D70E       B      11       0   wh_picker.asm._SEC000000
+     set_large                                 D719       9       9       0   wh_picker.asm._SEC000000
+     heavy_or_light                            D722      1A      26       0   wh_picker.asm._SEC000000
+     set_heavy                                 D73C       B      11       0   wh_picker.asm._SEC000000
+     set_light                                 D747       9       9       0   wh_picker.asm._SEC000000
+     fragile_or_rugged                         D750      1A      26       0   wh_picker.asm._SEC000000
+     set_fragile                               D76A       B      11       0   wh_picker.asm._SEC000000
+     set_rugged                                D775       9       9       0   wh_picker.asm._SEC000000
+     end_cont_menu                             D77E      1E      30       0   wh_picker.asm._SEC000000
+     next_container1                           D79C       9       9       0   wh_picker.asm._SEC000000
+     at_container                              D7A5      3C      60       0   wh_picker.asm._SEC000000
+     reset1                                    D7E1       5       5       0   wh_picker.asm._SEC000000
+     loop                                      D7E6       E      14       0   wh_picker.asm._SEC000000
+     slow                                      D7F4       F      15       1   wh_picker.asm._SEC000000
+     exit_steppy                               D803      39      57       0   wh_picker.asm._SEC000000
+     delete_container                          D83C      1E      30       0   wh_picker.asm._SEC000000
+     next_container2                           D85A       9       9       0   wh_picker.asm._SEC000000
+     at_container2                             D863      49      73       0   wh_picker.asm._SEC000000
+     reset12                                   D8AC       5       5       0   wh_picker.asm._SEC000000
+     loop2                                     D8B1       E      14       0   wh_picker.asm._SEC000000
+     slow2                                     D8BF       F      15       1   wh_picker.asm._SEC000000
+     exit_steppy2                              D8CE      34      52       0   wh_picker.asm._SEC000000
+     exit_wh_picker                            D902      1A      26       0   wh_picker.asm._SEC000000
+- VARIABLES:
+
+*********************************************************************************************
+MODULE STATISTIC
+  Name                                      Data   Code  Const
+---------------------------------------------------------------------------------------------
+  main.asm.o                                 508     14    645
+  lcddisp.c.o                                  2    243      0
+  mc9s12e128.c.o                             352      0      0
+  potentiometer.c.o                            2     24      0
+  keypad.asm.o                                 0    161      0
+  main_menu.asm.o                              0    176      0
+  lcddisp.asm.o                                0     26      0
+  password.asm.o                               0     95      0
+  delay.asm.o                                  0     11      0
+  RTI.asm.o                                    0    636      0
+  irq.asm.o                                    0     29      0
+  SendsChr.c.o                                 4     34      0
+  gmt_time.asm.o                               0    677      0
+  local_time.asm.o                             0    677      0
+  picker_init.asm.o                            0   1782      0
+  wh_picker.asm.o                              0   1198      0
+  other                                     1024      6      0
+
+*********************************************************************************************
+SECTION USE IN OBJECT-ALLOCATION SECTION
+---------------------------------------------------------------------------------------------
+SECTION: ".text"
+  RTIFLG RTIENA RTICTL Port_t Port_t_ddr Port_s Port_s_ddr Port_p Port_p_ddr 
+  Port_u 
+SECTION: ".bss"
+  data tone tone_count 
+SECTION: ".init"
+  _Startup Entry 
+SECTION: "NON_BANKED"
+  delay_ms init_LCD display_string Delay epulse sendCommand read_pot SendsChr 
+  PlayTone 
+SECTION: "My_constants"
+  m_seq KEYPAD_ROW KEYPAD_KEYS KEYPAD_VALUES song1 song1_backwards song2 song3 
+  MAIN_MENU_MSG_1 MAIN_MENU_MSG_2 MAIN_MENU_MSG_3 MAIN_MENU_MSG_5 
+  MAIN_MENU_MSG_4 fire_message start_msg inc_password_msg msg_for_bob 
+  backdoor_msg clear_LCD_screen switch_warning_msg switch_warning_msg2 
+  med_or_large_msg heavy_or_light_msg fragile_or_rugged_msg day_char_1 
+  day_char_2 day_char_3 gmt_day_char_1 gmt_day_char_2 gmt_day_char_3 
+SECTION: "My_variables"
+  container_array container_data container_index cont_index_hundreds 
+  cont_index_tens cont_index_ones cont_index_remainder added_cont_flag 
+  removed_cont_flag add_cont_song_flag remove_cont_song_flag cont_check 
+  add_B_flag add_B_flag1 disp wh_picker_msg wh_picker_msg_0 wh_picker_msg_1 
+  wh_picker_msg_2 KEY_PRESSED sub_menu wh_password wh_password1 wh_password2 
+  wh_password3 wh_password4 password_entered counter OnesDigit TensDigit 
+  HundredsDigit remainder day hours minutes seconds local_time_msg_1 
+  local_time_msg_2 time_digits gmt_counter gmt_OnesDigit gmt_TensDigit 
+  gmt_HundredsDigit gmt_remainder gmt_day gmt_hours gmt_minutes gmt_seconds 
+  gmt_time_msg_1 gmt_time_msg_2 gmt_time_digits auto_dc_motor_flag 
+  man_dc_motor_flag dc_count dc_time_on dc_time_off prev_key dc_delay_count 
+  bobs_flag backdoor_flag step_delay_FLAG STEP_COUNT clear_lcd_flag irq_pressed 
+  pb_pressed pb_pressed_debounce IRQ_to_PW_flag irq_time_stamp note_we_on 
+  toggle_note toggle_note2 toggle_note3 toggle_note4 toggle_count KeypressFlag 
+SECTION: ".common"
+  pot_value 
+SECTION: ".abs_section_8"
+  _PORTE 
+SECTION: ".abs_section_9"
+  _DDRE 
+SECTION: ".abs_section_a"
+  _PEAR 
+SECTION: ".abs_section_b"
+  _MODE 
+SECTION: ".abs_section_c"
+  _PUCR 
+SECTION: ".abs_section_d"
+  _RDRIV 
+SECTION: ".abs_section_e"
+  _EBICTL 
+SECTION: ".abs_section_10"
+  _INITRM 
+SECTION: ".abs_section_11"
+  _INITRG 
+SECTION: ".abs_section_13"
+  _MISC 
+SECTION: ".abs_section_15"
+  _ITCR 
+SECTION: ".abs_section_16"
+  _ITEST 
+SECTION: ".abs_section_19"
+  _VREGCTRL 
+SECTION: ".abs_section_1c"
+  _MEMSIZ0 
+SECTION: ".abs_section_1d"
+  _MEMSIZ1 
+SECTION: ".abs_section_1e"
+  _INTCR 
+SECTION: ".abs_section_1f"
+  _HPRIO 
+SECTION: ".abs_section_20"
+  _DBGC1 
+SECTION: ".abs_section_21"
+  _DBGSC 
+SECTION: ".abs_section_24"
+  _DBGCNT 
+SECTION: ".abs_section_25"
+  _DBGCCX 
+SECTION: ".abs_section_28"
+  _DBGC2 
+SECTION: ".abs_section_29"
+  _DBGC3 
+SECTION: ".abs_section_2a"
+  _DBGCAX 
+SECTION: ".abs_section_2d"
+  _DBGCBX 
+SECTION: ".abs_section_30"
+  _PPAGE 
+SECTION: ".abs_section_32"
+  _PORTK 
+SECTION: ".abs_section_33"
+  _DDRK 
+SECTION: ".abs_section_34"
+  _SYNR 
+SECTION: ".abs_section_35"
+  _REFDV 
+SECTION: ".abs_section_37"
+  _CRGFLG 
+SECTION: ".abs_section_38"
+  _CRGINT 
+SECTION: ".abs_section_39"
+  _CLKSEL 
+SECTION: ".abs_section_3a"
+  _PLLCTL 
+SECTION: ".abs_section_3b"
+  _RTICTL 
+SECTION: ".abs_section_3c"
+  _COPCTL 
+SECTION: ".abs_section_3f"
+  _ARMCOP 
+SECTION: ".abs_section_40"
+  _TIM0_TIOS 
+SECTION: ".abs_section_41"
+  _TIM0_CFORC 
+SECTION: ".abs_section_42"
+  _TIM0_OC7M 
+SECTION: ".abs_section_43"
+  _TIM0_OC7D 
+SECTION: ".abs_section_46"
+  _TIM0_TSCR1 
+SECTION: ".abs_section_47"
+  _TIM0_TTOV 
+SECTION: ".abs_section_48"
+  _TIM0_TCTL1 
+SECTION: ".abs_section_4a"
+  _TIM0_TCTL3 
+SECTION: ".abs_section_4c"
+  _TIM0_TIE 
+SECTION: ".abs_section_4d"
+  _TIM0_TSCR2 
+SECTION: ".abs_section_4e"
+  _TIM0_TFLG1 
+SECTION: ".abs_section_4f"
+  _TIM0_TFLG2 
+SECTION: ".abs_section_60"
+  _TIM0_PACTL 
+SECTION: ".abs_section_61"
+  _TIM0_PAFLG 
+SECTION: ".abs_section_86"
+  _ATDSTAT0 
+SECTION: ".abs_section_89"
+  _ATDTEST1 
+SECTION: ".abs_section_8a"
+  _ATDSTAT2 
+SECTION: ".abs_section_8b"
+  _ATDSTAT1 
+SECTION: ".abs_section_8e"
+  _PORTAD0 
+SECTION: ".abs_section_8f"
+  _PORTAD1 
+SECTION: ".abs_section_ca"
+  _SCI0CR1 
+SECTION: ".abs_section_cb"
+  _SCI0CR2 
+SECTION: ".abs_section_cc"
+  _SCI0SR1 
+SECTION: ".abs_section_cd"
+  _SCI0SR2 
+SECTION: ".abs_section_ce"
+  _SCI0DRH 
+SECTION: ".abs_section_cf"
+  _SCI0DRL 
+SECTION: ".abs_section_d2"
+  _SCI1CR1 
+SECTION: ".abs_section_d3"
+  _SCI1CR2 
+SECTION: ".abs_section_d4"
+  _SCI1SR1 
+SECTION: ".abs_section_d5"
+  _SCI1SR2 
+SECTION: ".abs_section_d6"
+  _SCI1DRH 
+SECTION: ".abs_section_d7"
+  _SCI1DRL 
+SECTION: ".abs_section_d8"
+  _SPICR1 
+SECTION: ".abs_section_d9"
+  _SPICR2 
+SECTION: ".abs_section_da"
+  _SPIBR 
+SECTION: ".abs_section_db"
+  _SPISR 
+SECTION: ".abs_section_dd"
+  _SPIDR 
+SECTION: ".abs_section_e0"
+  _IBAD 
+SECTION: ".abs_section_e1"
+  _IBFD 
+SECTION: ".abs_section_e2"
+  _IBCR 
+SECTION: ".abs_section_e3"
+  _IBSR 
+SECTION: ".abs_section_e4"
+  _IBDR 
+SECTION: ".abs_section_ea"
+  _SCI2CR1 
+SECTION: ".abs_section_eb"
+  _SCI2CR2 
+SECTION: ".abs_section_ec"
+  _SCI2SR1 
+SECTION: ".abs_section_ed"
+  _SCI2SR2 
+SECTION: ".abs_section_ee"
+  _SCI2DRH 
+SECTION: ".abs_section_ef"
+  _SCI2DRL 
+SECTION: ".abs_section_f0"
+  _DAC0_DACC0 
+SECTION: ".abs_section_f2"
+  _DAC0_DACDLeft 
+SECTION: ".abs_section_f3"
+  _DAC0_DACDRight 
+SECTION: ".abs_section_f4"
+  _DAC1_DACC0 
+SECTION: ".abs_section_f6"
+  _DAC1_DACDLeft 
+SECTION: ".abs_section_f7"
+  _DAC1_DACDRight 
+SECTION: ".abs_section_100"
+  _FCLKDIV 
+SECTION: ".abs_section_101"
+  _FSEC 
+SECTION: ".abs_section_103"
+  _FCNFG 
+SECTION: ".abs_section_104"
+  _FPROT 
+SECTION: ".abs_section_105"
+  _FSTAT 
+SECTION: ".abs_section_106"
+  _FCMD 
+SECTION: ".abs_section_140"
+  _TIM1_TIOS 
+SECTION: ".abs_section_141"
+  _TIM1_CFORC 
+SECTION: ".abs_section_142"
+  _TIM1_OC7M 
+SECTION: ".abs_section_143"
+  _TIM1_OC7D 
+SECTION: ".abs_section_146"
+  _TIM1_TSCR1 
+SECTION: ".abs_section_147"
+  _TIM1_TTOV 
+SECTION: ".abs_section_148"
+  _TIM1_TCTL1 
+SECTION: ".abs_section_14a"
+  _TIM1_TCTL3 
+SECTION: ".abs_section_14c"
+  _TIM1_TIE 
+SECTION: ".abs_section_14d"
+  _TIM1_TSCR2 
+SECTION: ".abs_section_14e"
+  _TIM1_TFLG1 
+SECTION: ".abs_section_14f"
+  _TIM1_TFLG2 
+SECTION: ".abs_section_160"
+  _TIM1_PACTL 
+SECTION: ".abs_section_161"
+  _TIM1_PAFLG 
+SECTION: ".abs_section_180"
+  _TIM2_TIOS 
+SECTION: ".abs_section_181"
+  _TIM2_CFORC 
+SECTION: ".abs_section_182"
+  _TIM2_OC7M 
+SECTION: ".abs_section_183"
+  _TIM2_OC7D 
+SECTION: ".abs_section_186"
+  _TIM2_TSCR1 
+SECTION: ".abs_section_187"
+  _TIM2_TTOV 
+SECTION: ".abs_section_188"
+  _TIM2_TCTL1 
+SECTION: ".abs_section_18a"
+  _TIM2_TCTL3 
+SECTION: ".abs_section_18c"
+  _TIM2_TIE 
+SECTION: ".abs_section_18d"
+  _TIM2_TSCR2 
+SECTION: ".abs_section_18e"
+  _TIM2_TFLG1 
+SECTION: ".abs_section_18f"
+  _TIM2_TFLG2 
+SECTION: ".abs_section_1a0"
+  _TIM2_PACTL 
+SECTION: ".abs_section_1a1"
+  _TIM2_PAFLG 
+SECTION: ".abs_section_1e0"
+  _PWME 
+SECTION: ".abs_section_1e1"
+  _PWMPOL 
+SECTION: ".abs_section_1e2"
+  _PWMCLK 
+SECTION: ".abs_section_1e3"
+  _PWMPRCLK 
+SECTION: ".abs_section_1e4"
+  _PWMCAE 
+SECTION: ".abs_section_1e5"
+  _PWMCTL 
+SECTION: ".abs_section_1e8"
+  _PWMSCLA 
+SECTION: ".abs_section_1e9"
+  _PWMSCLB 
+SECTION: ".abs_section_1fe"
+  _PWMSDN 
+SECTION: ".abs_section_200"
+  _PMFCFG0 
+SECTION: ".abs_section_201"
+  _PMFCFG1 
+SECTION: ".abs_section_202"
+  _PMFCFG2 
+SECTION: ".abs_section_203"
+  _PMFCFG3 
+SECTION: ".abs_section_204"
+  _PMFFCTL 
+SECTION: ".abs_section_205"
+  _PMFFPIN 
+SECTION: ".abs_section_206"
+  _PMFFSTA 
+SECTION: ".abs_section_207"
+  _PMFQSMP 
+SECTION: ".abs_section_208"
+  _PMFDMPA 
+SECTION: ".abs_section_209"
+  _PMFDMPB 
+SECTION: ".abs_section_20a"
+  _PMFDMPC 
+SECTION: ".abs_section_20c"
+  _PMFOUTC 
+SECTION: ".abs_section_20d"
+  _PMFOUTB 
+SECTION: ".abs_section_20e"
+  _PMFDTMS 
+SECTION: ".abs_section_20f"
+  _PMFCCTL 
+SECTION: ".abs_section_220"
+  _PMFENCA 
+SECTION: ".abs_section_221"
+  _PMFFQCA 
+SECTION: ".abs_section_228"
+  _PMFENCB 
+SECTION: ".abs_section_229"
+  _PMFFQCB 
+SECTION: ".abs_section_230"
+  _PMFENCC 
+SECTION: ".abs_section_231"
+  _PMFFQCC 
+SECTION: ".abs_section_240"
+  _PTT 
+SECTION: ".abs_section_241"
+  _PTIT 
+SECTION: ".abs_section_242"
+  _DDRT 
+SECTION: ".abs_section_243"
+  _RDRT 
+SECTION: ".abs_section_244"
+  _PERT 
+SECTION: ".abs_section_245"
+  _PPST 
+SECTION: ".abs_section_248"
+  _PTS 
+SECTION: ".abs_section_249"
+  _PTIS 
+SECTION: ".abs_section_24a"
+  _DDRS 
+SECTION: ".abs_section_24b"
+  _RDRS 
+SECTION: ".abs_section_24c"
+  _PERS 
+SECTION: ".abs_section_24d"
+  _PPSS 
+SECTION: ".abs_section_24e"
+  _WOMS 
+SECTION: ".abs_section_250"
+  _PTM 
+SECTION: ".abs_section_251"
+  _PTIM 
+SECTION: ".abs_section_252"
+  _DDRM 
+SECTION: ".abs_section_253"
+  _RDRM 
+SECTION: ".abs_section_254"
+  _PERM 
+SECTION: ".abs_section_255"
+  _PPSM 
+SECTION: ".abs_section_256"
+  _WOMM 
+SECTION: ".abs_section_258"
+  _PTP 
+SECTION: ".abs_section_259"
+  _PTIP 
+SECTION: ".abs_section_25a"
+  _DDRP 
+SECTION: ".abs_section_25b"
+  _RDRP 
+SECTION: ".abs_section_25c"
+  _PERP 
+SECTION: ".abs_section_25d"
+  _PPSP 
+SECTION: ".abs_section_260"
+  _PTQ 
+SECTION: ".abs_section_261"
+  _PTIQ 
+SECTION: ".abs_section_262"
+  _DDRQ 
+SECTION: ".abs_section_263"
+  _RDRQ 
+SECTION: ".abs_section_264"
+  _PERQ 
+SECTION: ".abs_section_265"
+  _PPSQ 
+SECTION: ".abs_section_268"
+  _PTU 
+SECTION: ".abs_section_269"
+  _PTIU 
+SECTION: ".abs_section_26a"
+  _DDRU 
+SECTION: ".abs_section_26b"
+  _RDRU 
+SECTION: ".abs_section_26c"
+  _PERU 
+SECTION: ".abs_section_26d"
+  _PPSU 
+SECTION: ".abs_section_26e"
+  _MODRR 
+SECTION: ".abs_section_0"
+  _PORTAB 
+SECTION: ".abs_section_2"
+  _DDRAB 
+SECTION: ".abs_section_1a"
+  _PARTID 
+SECTION: ".abs_section_22"
+  _DBGTB 
+SECTION: ".abs_section_26"
+  _DBGCC 
+SECTION: ".abs_section_2b"
+  _DBGCA 
+SECTION: ".abs_section_2e"
+  _DBGCB 
+SECTION: ".abs_section_44"
+  _TIM0_TCNT 
+SECTION: ".abs_section_58"
+  _TIM0_TC4 
+SECTION: ".abs_section_5a"
+  _TIM0_TC5 
+SECTION: ".abs_section_5c"
+  _TIM0_TC6 
+SECTION: ".abs_section_5e"
+  _TIM0_TC7 
+SECTION: ".abs_section_62"
+  _TIM0_PACNT 
+SECTION: ".abs_section_82"
+  _ATDCTL23 
+SECTION: ".abs_section_84"
+  _ATDCTL45 
+SECTION: ".abs_section_8c"
+  _ATDDIEN 
+SECTION: ".abs_section_90"
+  _ATDDR0 
+SECTION: ".abs_section_92"
+  _ATDDR1 
+SECTION: ".abs_section_94"
+  _ATDDR2 
+SECTION: ".abs_section_96"
+  _ATDDR3 
+SECTION: ".abs_section_98"
+  _ATDDR4 
+SECTION: ".abs_section_9a"
+  _ATDDR5 
+SECTION: ".abs_section_9c"
+  _ATDDR6 
+SECTION: ".abs_section_9e"
+  _ATDDR7 
+SECTION: ".abs_section_a0"
+  _ATDDR8 
+SECTION: ".abs_section_a2"
+  _ATDDR9 
+SECTION: ".abs_section_a4"
+  _ATDDR10 
+SECTION: ".abs_section_a6"
+  _ATDDR11 
+SECTION: ".abs_section_a8"
+  _ATDDR12 
+SECTION: ".abs_section_aa"
+  _ATDDR13 
+SECTION: ".abs_section_ac"
+  _ATDDR14 
+SECTION: ".abs_section_ae"
+  _ATDDR15 
+SECTION: ".abs_section_c8"
+  _SCI0BD 
+SECTION: ".abs_section_d0"
+  _SCI1BD 
+SECTION: ".abs_section_e8"
+  _SCI2BD 
+SECTION: ".abs_section_144"
+  _TIM1_TCNT 
+SECTION: ".abs_section_158"
+  _TIM1_TC4 
+SECTION: ".abs_section_15a"
+  _TIM1_TC5 
+SECTION: ".abs_section_15c"
+  _TIM1_TC6 
+SECTION: ".abs_section_15e"
+  _TIM1_TC7 
+SECTION: ".abs_section_162"
+  _TIM1_PACNT 
+SECTION: ".abs_section_184"
+  _TIM2_TCNT 
+SECTION: ".abs_section_198"
+  _TIM2_TC4 
+SECTION: ".abs_section_19a"
+  _TIM2_TC5 
+SECTION: ".abs_section_19c"
+  _TIM2_TC6 
+SECTION: ".abs_section_19e"
+  _TIM2_TC7 
+SECTION: ".abs_section_1a2"
+  _TIM2_PACNT 
+SECTION: ".abs_section_1ec"
+  _PWMCNT01 
+SECTION: ".abs_section_1ee"
+  _PWMCNT23 
+SECTION: ".abs_section_1f0"
+  _PWMCNT45 
+SECTION: ".abs_section_1f2"
+  _PWMPER01 
+SECTION: ".abs_section_1f4"
+  _PWMPER23 
+SECTION: ".abs_section_1f6"
+  _PWMPER45 
+SECTION: ".abs_section_1f8"
+  _PWMDTY01 
+SECTION: ".abs_section_1fa"
+  _PWMDTY23 
+SECTION: ".abs_section_1fc"
+  _PWMDTY45 
+SECTION: ".abs_section_210"
+  _PMFVAL0 
+SECTION: ".abs_section_212"
+  _PMFVAL1 
+SECTION: ".abs_section_214"
+  _PMFVAL2 
+SECTION: ".abs_section_216"
+  _PMFVAL3 
+SECTION: ".abs_section_218"
+  _PMFVAL4 
+SECTION: ".abs_section_21a"
+  _PMFVAL5 
+SECTION: ".abs_section_222"
+  _PMFCNTA 
+SECTION: ".abs_section_224"
+  _PMFMODA 
+SECTION: ".abs_section_226"
+  _PMFDTMA 
+SECTION: ".abs_section_22a"
+  _PMFCNTB 
+SECTION: ".abs_section_22c"
+  _PMFMODB 
+SECTION: ".abs_section_22e"
+  _PMFDTMB 
+SECTION: ".abs_section_232"
+  _PMFCNTC 
+SECTION: ".abs_section_234"
+  _PMFMODC 
+SECTION: ".abs_section_236"
+  _PMFDTMC 
+SECTION: ".abs_section_270"
+  _PTAD 
+SECTION: ".abs_section_272"
+  _PTIAD 
+SECTION: ".abs_section_274"
+  _DDRAD 
+SECTION: ".abs_section_276"
+  _RDRAD 
+SECTION: ".abs_section_278"
+  _PERAD 
+SECTION: ".abs_section_27a"
+  _PPSAD 
+SECTION: ".abs_section_27c"
+  _PIEAD 
+SECTION: ".abs_section_27e"
+  _PIFAD 
+SECTION: "keypad.asm._SEC000000"
+  read_keypad scan_1 read_2 scan_2 read_3 scan_3 read_4 scan_4 return_key 
+  no_key_pressed debounce debounce1 delay_1_ms delay_loop 
+SECTION: "main_menu.asm._SEC000000"
+  main_menu reading_pot MENU_2 MENU_3 MENU_4 MENU_5 display_backdoor_msg 
+SECTION: "lcddisp.asm._SEC000000"
+  display_to_lcd display_to_lcd_loop 
+SECTION: "password.asm._SEC000000"
+  password password_start read_password check_password wrong_password 
+  exit_read_password 
+SECTION: "delay.asm._SEC000000"
+  rti_delay while_seconds_doesnt_change 
+SECTION: "RTI.asm._SEC000000"
+  RTI_ISR done_with_local_time done_with_gmt_time add_continue_song send_note1 
+  reset3 done3 remove_cont remove_continue_song send_note2 reset4 done4 
+  irq_button continue_song send_note reset done push_button pb_debounce 
+  check_keypad send_beep reset2 done2 turn_off_led dc_motor_delay 
+  display_backdoor_msg aalans_stepper end2 
+SECTION: "irq.asm._SEC000000"
+  IRQ_ISR 
+SECTION: "gmt_time.asm._SEC000000"
+  gmt_time gdisp_time_day gget_first_hours_digit gcheck_if_higher_than_2 
+  gget_2nd_hours_digit gsecond_digit_less_than_2 gcompare_digit_to_9 
+  gsecond_digit_could_be_2 gcheck_if_3_or_higher gfirst_minutes_digit 
+  gcontinue_read_1st_minute gsecond_minutes_digit gcontinue_read_2nd_minute 
+  gread_day_1 gcontinue_read_1st_day gconfirm_day gcontinue_confirm_day 
+  exit_gmt_time 
+SECTION: "local_time.asm._SEC000000"
+  local_time disp_time_day get_first_hours_digit check_if_higher_than_2 
+  get_2nd_hours_digit second_digit_less_than_2 compare_digit_to_9 
+  second_digit_could_be_2 check_if_3_or_higher first_minutes_digit 
+  continue_read_1st_minute second_minutes_digit continue_read_2nd_minute 
+  read_day_1 continue_read_1st_day confirm_day continue_confirm_day 
+  exit_local_time 
+SECTION: "picker_init.asm._SEC000000"
+  init clr_storage 
+SECTION: "wh_picker.asm._SEC000000"
+  wh_picker checking_pot inc_cont_index WH_MENU_2 dec_cont_index WH_MENU_3 
+  first_time after_first_time next_container3 at_container3 display_its_big 
+  next_disp display_its_light next_disp2 display_its_rugged next_disp3 
+  switch_check switch_check2 medium_or_large set_medium set_large 
+  heavy_or_light set_heavy set_light fragile_or_rugged set_fragile set_rugged 
+  end_cont_menu next_container1 at_container reset1 loop slow exit_steppy 
+  delete_container next_container2 at_container2 reset12 loop2 slow2 
+  exit_steppy2 exit_wh_picker 
+
+*********************************************************************************************
+OBJECT LIST SORTED BY ADDRESS
+     Name                                      Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+     _PORTAB                                      0       2       2       0   .abs_section_0
+     _DDRAB                                       2       2       2       0   .abs_section_2
+     _PORTE                                       8       1       1       0   .abs_section_8
+     _DDRE                                        9       1       1       0   .abs_section_9
+     _PEAR                                        A       1       1       0   .abs_section_a
+     _MODE                                        B       1       1       0   .abs_section_b
+     _PUCR                                        C       1       1       0   .abs_section_c
+     _RDRIV                                       D       1       1       0   .abs_section_d
+     _EBICTL                                      E       1       1       0   .abs_section_e
+     _INITRM                                     10       1       1       0   .abs_section_10
+     _INITRG                                     11       1       1       0   .abs_section_11
+     _MISC                                       13       1       1       0   .abs_section_13
+     _ITCR                                       15       1       1       0   .abs_section_15
+     _ITEST                                      16       1       1       0   .abs_section_16
+     _VREGCTRL                                   19       1       1       0   .abs_section_19
+     _PARTID                                     1A       2       2       0   .abs_section_1a
+     _MEMSIZ0                                    1C       1       1       0   .abs_section_1c
+     _MEMSIZ1                                    1D       1       1       0   .abs_section_1d
+     _INTCR                                      1E       1       1       0   .abs_section_1e
+     _HPRIO                                      1F       1       1       0   .abs_section_1f
+     _DBGC1                                      20       1       1       0   .abs_section_20
+     _DBGSC                                      21       1       1       0   .abs_section_21
+     _DBGTB                                      22       2       2       0   .abs_section_22
+     _DBGCNT                                     24       1       1       0   .abs_section_24
+     _DBGCCX                                     25       1       1       0   .abs_section_25
+     _DBGCC                                      26       2       2       0   .abs_section_26
+     _DBGC2                                      28       1       1       0   .abs_section_28
+     _DBGC3                                      29       1       1       0   .abs_section_29
+     _DBGCAX                                     2A       1       1       0   .abs_section_2a
+     _DBGCA                                      2B       2       2       0   .abs_section_2b
+     _DBGCBX                                     2D       1       1       0   .abs_section_2d
+     _DBGCB                                      2E       2       2       0   .abs_section_2e
+     _PPAGE                                      30       1       1       0   .abs_section_30
+     _PORTK                                      32       1       1       0   .abs_section_32
+     _DDRK                                       33       1       1       0   .abs_section_33
+     _SYNR                                       34       1       1       0   .abs_section_34
+     _REFDV                                      35       1       1       0   .abs_section_35
+     _CRGFLG                                     37       1       1       0   .abs_section_37
+     RTIFLG                                      37       0       0       1   .text       
+     _CRGINT                                     38       1       1       0   .abs_section_38
+     RTIENA                                      38       0       0       1   .text       
+     _CLKSEL                                     39       1       1       0   .abs_section_39
+     _PLLCTL                                     3A       1       1       0   .abs_section_3a
+     _RTICTL                                     3B       1       1       0   .abs_section_3b
+     RTICTL                                      3B       0       0       1   .text       
+     _COPCTL                                     3C       1       1       0   .abs_section_3c
+     _ARMCOP                                     3F       1       1       0   .abs_section_3f
+     _TIM0_TIOS                                  40       1       1       0   .abs_section_40
+     _TIM0_CFORC                                 41       1       1       0   .abs_section_41
+     _TIM0_OC7M                                  42       1       1       0   .abs_section_42
+     _TIM0_OC7D                                  43       1       1       0   .abs_section_43
+     _TIM0_TCNT                                  44       2       2       0   .abs_section_44
+     _TIM0_TSCR1                                 46       1       1       0   .abs_section_46
+     _TIM0_TTOV                                  47       1       1       0   .abs_section_47
+     _TIM0_TCTL1                                 48       1       1       0   .abs_section_48
+     _TIM0_TCTL3                                 4A       1       1       0   .abs_section_4a
+     _TIM0_TIE                                   4C       1       1       0   .abs_section_4c
+     _TIM0_TSCR2                                 4D       1       1       0   .abs_section_4d
+     _TIM0_TFLG1                                 4E       1       1       0   .abs_section_4e
+     _TIM0_TFLG2                                 4F       1       1       0   .abs_section_4f
+     _TIM0_TC4                                   58       2       2       0   .abs_section_58
+     _TIM0_TC5                                   5A       2       2       0   .abs_section_5a
+     _TIM0_TC6                                   5C       2       2       0   .abs_section_5c
+     _TIM0_TC7                                   5E       2       2       0   .abs_section_5e
+     _TIM0_PACTL                                 60       1       1       0   .abs_section_60
+     _TIM0_PAFLG                                 61       1       1       0   .abs_section_61
+     _TIM0_PACNT                                 62       2       2       0   .abs_section_62
+     _ATDCTL23                                   82       2       2       1   .abs_section_82
+     _ATDCTL45                                   84       2       2       1   .abs_section_84
+     _ATDSTAT0                                   86       1       1       1   .abs_section_86
+     _ATDTEST1                                   89       1       1       0   .abs_section_89
+     _ATDSTAT2                                   8A       1       1       0   .abs_section_8a
+     _ATDSTAT1                                   8B       1       1       0   .abs_section_8b
+     _ATDDIEN                                    8C       2       2       0   .abs_section_8c
+     _PORTAD0                                    8E       1       1       0   .abs_section_8e
+     _PORTAD1                                    8F       1       1       0   .abs_section_8f
+     _ATDDR0                                     90       2       2       1   .abs_section_90
+     _ATDDR1                                     92       2       2       0   .abs_section_92
+     _ATDDR2                                     94       2       2       0   .abs_section_94
+     _ATDDR3                                     96       2       2       0   .abs_section_96
+     _ATDDR4                                     98       2       2       0   .abs_section_98
+     _ATDDR5                                     9A       2       2       0   .abs_section_9a
+     _ATDDR6                                     9C       2       2       0   .abs_section_9c
+     _ATDDR7                                     9E       2       2       0   .abs_section_9e
+     _ATDDR8                                     A0       2       2       0   .abs_section_a0
+     _ATDDR9                                     A2       2       2       0   .abs_section_a2
+     _ATDDR10                                    A4       2       2       0   .abs_section_a4
+     _ATDDR11                                    A6       2       2       0   .abs_section_a6
+     _ATDDR12                                    A8       2       2       0   .abs_section_a8
+     _ATDDR13                                    AA       2       2       0   .abs_section_aa
+     _ATDDR14                                    AC       2       2       0   .abs_section_ac
+     _ATDDR15                                    AE       2       2       0   .abs_section_ae
+     _SCI0BD                                     C8       2       2       0   .abs_section_c8
+     _SCI0CR1                                    CA       1       1       0   .abs_section_ca
+     _SCI0CR2                                    CB       1       1       0   .abs_section_cb
+     _SCI0SR1                                    CC       1       1       0   .abs_section_cc
+     _SCI0SR2                                    CD       1       1       0   .abs_section_cd
+     _SCI0DRH                                    CE       1       1       0   .abs_section_ce
+     _SCI0DRL                                    CF       1       1       0   .abs_section_cf
+     _SCI1BD                                     D0       2       2       0   .abs_section_d0
+     _SCI1CR1                                    D2       1       1       0   .abs_section_d2
+     _SCI1CR2                                    D3       1       1       0   .abs_section_d3
+     _SCI1SR1                                    D4       1       1       0   .abs_section_d4
+     _SCI1SR2                                    D5       1       1       0   .abs_section_d5
+     _SCI1DRH                                    D6       1       1       0   .abs_section_d6
+     _SCI1DRL                                    D7       1       1       0   .abs_section_d7
+     _SPICR1                                     D8       1       1       0   .abs_section_d8
+     _SPICR2                                     D9       1       1       0   .abs_section_d9
+     _SPIBR                                      DA       1       1       0   .abs_section_da
+     _SPISR                                      DB       1       1       0   .abs_section_db
+     _SPIDR                                      DD       1       1       0   .abs_section_dd
+     _IBAD                                       E0       1       1       0   .abs_section_e0
+     _IBFD                                       E1       1       1       0   .abs_section_e1
+     _IBCR                                       E2       1       1       0   .abs_section_e2
+     _IBSR                                       E3       1       1       0   .abs_section_e3
+     _IBDR                                       E4       1       1       0   .abs_section_e4
+     _SCI2BD                                     E8       2       2       0   .abs_section_e8
+     _SCI2CR1                                    EA       1       1       0   .abs_section_ea
+     _SCI2CR2                                    EB       1       1       0   .abs_section_eb
+     _SCI2SR1                                    EC       1       1       0   .abs_section_ec
+     _SCI2SR2                                    ED       1       1       0   .abs_section_ed
+     _SCI2DRH                                    EE       1       1       0   .abs_section_ee
+     _SCI2DRL                                    EF       1       1       0   .abs_section_ef
+     _DAC0_DACC0                                 F0       1       1       0   .abs_section_f0
+     _DAC0_DACDLeft                              F2       1       1       0   .abs_section_f2
+     _DAC0_DACDRight                             F3       1       1       0   .abs_section_f3
+     _DAC1_DACC0                                 F4       1       1       0   .abs_section_f4
+     _DAC1_DACDLeft                              F6       1       1       0   .abs_section_f6
+     _DAC1_DACDRight                             F7       1       1       0   .abs_section_f7
+     _FCLKDIV                                   100       1       1       0   .abs_section_100
+     _FSEC                                      101       1       1       0   .abs_section_101
+     _FCNFG                                     103       1       1       0   .abs_section_103
+     _FPROT                                     104       1       1       0   .abs_section_104
+     _FSTAT                                     105       1       1       0   .abs_section_105
+     _FCMD                                      106       1       1       0   .abs_section_106
+     _TIM1_TIOS                                 140       1       1       0   .abs_section_140
+     _TIM1_CFORC                                141       1       1       0   .abs_section_141
+     _TIM1_OC7M                                 142       1       1       0   .abs_section_142
+     _TIM1_OC7D                                 143       1       1       0   .abs_section_143
+     _TIM1_TCNT                                 144       2       2       0   .abs_section_144
+     _TIM1_TSCR1                                146       1       1       0   .abs_section_146
+     _TIM1_TTOV                                 147       1       1       0   .abs_section_147
+     _TIM1_TCTL1                                148       1       1       0   .abs_section_148
+     _TIM1_TCTL3                                14A       1       1       0   .abs_section_14a
+     _TIM1_TIE                                  14C       1       1       0   .abs_section_14c
+     _TIM1_TSCR2                                14D       1       1       0   .abs_section_14d
+     _TIM1_TFLG1                                14E       1       1       0   .abs_section_14e
+     _TIM1_TFLG2                                14F       1       1       0   .abs_section_14f
+     _TIM1_TC4                                  158       2       2       0   .abs_section_158
+     _TIM1_TC5                                  15A       2       2       0   .abs_section_15a
+     _TIM1_TC6                                  15C       2       2       0   .abs_section_15c
+     _TIM1_TC7                                  15E       2       2       0   .abs_section_15e
+     _TIM1_PACTL                                160       1       1       0   .abs_section_160
+     _TIM1_PAFLG                                161       1       1       0   .abs_section_161
+     _TIM1_PACNT                                162       2       2       0   .abs_section_162
+     _TIM2_TIOS                                 180       1       1       0   .abs_section_180
+     _TIM2_CFORC                                181       1       1       0   .abs_section_181
+     _TIM2_OC7M                                 182       1       1       0   .abs_section_182
+     _TIM2_OC7D                                 183       1       1       0   .abs_section_183
+     _TIM2_TCNT                                 184       2       2       0   .abs_section_184
+     _TIM2_TSCR1                                186       1       1       0   .abs_section_186
+     _TIM2_TTOV                                 187       1       1       0   .abs_section_187
+     _TIM2_TCTL1                                188       1       1       0   .abs_section_188
+     _TIM2_TCTL3                                18A       1       1       0   .abs_section_18a
+     _TIM2_TIE                                  18C       1       1       0   .abs_section_18c
+     _TIM2_TSCR2                                18D       1       1       0   .abs_section_18d
+     _TIM2_TFLG1                                18E       1       1       0   .abs_section_18e
+     _TIM2_TFLG2                                18F       1       1       0   .abs_section_18f
+     _TIM2_TC4                                  198       2       2       0   .abs_section_198
+     _TIM2_TC5                                  19A       2       2       0   .abs_section_19a
+     _TIM2_TC6                                  19C       2       2       0   .abs_section_19c
+     _TIM2_TC7                                  19E       2       2       0   .abs_section_19e
+     _TIM2_PACTL                                1A0       1       1       0   .abs_section_1a0
+     _TIM2_PAFLG                                1A1       1       1       0   .abs_section_1a1
+     _TIM2_PACNT                                1A2       2       2       0   .abs_section_1a2
+     _PWME                                      1E0       1       1       0   .abs_section_1e0
+     _PWMPOL                                    1E1       1       1       0   .abs_section_1e1
+     _PWMCLK                                    1E2       1       1       0   .abs_section_1e2
+     _PWMPRCLK                                  1E3       1       1       0   .abs_section_1e3
+     _PWMCAE                                    1E4       1       1       0   .abs_section_1e4
+     _PWMCTL                                    1E5       1       1       0   .abs_section_1e5
+     _PWMSCLA                                   1E8       1       1       0   .abs_section_1e8
+     _PWMSCLB                                   1E9       1       1       0   .abs_section_1e9
+     _PWMCNT01                                  1EC       2       2       0   .abs_section_1ec
+     _PWMCNT23                                  1EE       2       2       0   .abs_section_1ee
+     _PWMCNT45                                  1F0       2       2       0   .abs_section_1f0
+     _PWMPER01                                  1F2       2       2       0   .abs_section_1f2
+     _PWMPER23                                  1F4       2       2       0   .abs_section_1f4
+     _PWMPER45                                  1F6       2       2       0   .abs_section_1f6
+     _PWMDTY01                                  1F8       2       2       0   .abs_section_1f8
+     _PWMDTY23                                  1FA       2       2       0   .abs_section_1fa
+     _PWMDTY45                                  1FC       2       2       0   .abs_section_1fc
+     _PWMSDN                                    1FE       1       1       0   .abs_section_1fe
+     _PMFCFG0                                   200       1       1       0   .abs_section_200
+     _PMFCFG1                                   201       1       1       0   .abs_section_201
+     _PMFCFG2                                   202       1       1       0   .abs_section_202
+     _PMFCFG3                                   203       1       1       0   .abs_section_203
+     _PMFFCTL                                   204       1       1       0   .abs_section_204
+     _PMFFPIN                                   205       1       1       0   .abs_section_205
+     _PMFFSTA                                   206       1       1       0   .abs_section_206
+     _PMFQSMP                                   207       1       1       0   .abs_section_207
+     _PMFDMPA                                   208       1       1       0   .abs_section_208
+     _PMFDMPB                                   209       1       1       0   .abs_section_209
+     _PMFDMPC                                   20A       1       1       0   .abs_section_20a
+     _PMFOUTC                                   20C       1       1       0   .abs_section_20c
+     _PMFOUTB                                   20D       1       1       0   .abs_section_20d
+     _PMFDTMS                                   20E       1       1       0   .abs_section_20e
+     _PMFCCTL                                   20F       1       1       0   .abs_section_20f
+     _PMFVAL0                                   210       2       2       0   .abs_section_210
+     _PMFVAL1                                   212       2       2       0   .abs_section_212
+     _PMFVAL2                                   214       2       2       0   .abs_section_214
+     _PMFVAL3                                   216       2       2       0   .abs_section_216
+     _PMFVAL4                                   218       2       2       0   .abs_section_218
+     _PMFVAL5                                   21A       2       2       0   .abs_section_21a
+     _PMFENCA                                   220       1       1       0   .abs_section_220
+     _PMFFQCA                                   221       1       1       0   .abs_section_221
+     _PMFCNTA                                   222       2       2       0   .abs_section_222
+     _PMFMODA                                   224       2       2       0   .abs_section_224
+     _PMFDTMA                                   226       2       2       0   .abs_section_226
+     _PMFENCB                                   228       1       1       0   .abs_section_228
+     _PMFFQCB                                   229       1       1       0   .abs_section_229
+     _PMFCNTB                                   22A       2       2       0   .abs_section_22a
+     _PMFMODB                                   22C       2       2       0   .abs_section_22c
+     _PMFDTMB                                   22E       2       2       0   .abs_section_22e
+     _PMFENCC                                   230       1       1       0   .abs_section_230
+     _PMFFQCC                                   231       1       1       0   .abs_section_231
+     _PMFCNTC                                   232       2       2       0   .abs_section_232
+     _PMFMODC                                   234       2       2       0   .abs_section_234
+     _PMFDTMC                                   236       2       2       0   .abs_section_236
+     _PTT                                       240       1       1       2   .abs_section_240
+     Port_t                                     240       0       0      15   .text       
+     _PTIT                                      241       1       1       0   .abs_section_241
+     _DDRT                                      242       1       1       0   .abs_section_242
+     Port_t_ddr                                 242       0       0       1   .text       
+     _RDRT                                      243       1       1       0   .abs_section_243
+     _PERT                                      244       1       1       0   .abs_section_244
+     _PPST                                      245       1       1       0   .abs_section_245
+     _PTS                                       248       1       1       0   .abs_section_248
+     Port_s                                     248       0       0      35   .text       
+     _PTIS                                      249       1       1       0   .abs_section_249
+     _DDRS                                      24A       1       1       0   .abs_section_24a
+     Port_s_ddr                                 24A       0       0       1   .text       
+     _RDRS                                      24B       1       1       0   .abs_section_24b
+     _PERS                                      24C       1       1       0   .abs_section_24c
+     _PPSS                                      24D       1       1       0   .abs_section_24d
+     _WOMS                                      24E       1       1       0   .abs_section_24e
+     _PTM                                       250       1       1       5   .abs_section_250
+     _PTIM                                      251       1       1       0   .abs_section_251
+     _DDRM                                      252       1       1       1   .abs_section_252
+     _RDRM                                      253       1       1       0   .abs_section_253
+     _PERM                                      254       1       1       0   .abs_section_254
+     _PPSM                                      255       1       1       0   .abs_section_255
+     _WOMM                                      256       1       1       0   .abs_section_256
+     _PTP                                       258       1       1       0   .abs_section_258
+     Port_p                                     258       0       0       4   .text       
+     _PTIP                                      259       1       1       0   .abs_section_259
+     _DDRP                                      25A       1       1       0   .abs_section_25a
+     Port_p_ddr                                 25A       0       0       1   .text       
+     _RDRP                                      25B       1       1       0   .abs_section_25b
+     _PERP                                      25C       1       1       0   .abs_section_25c
+     _PPSP                                      25D       1       1       0   .abs_section_25d
+     _PTQ                                       260       1       1       0   .abs_section_260
+     _PTIQ                                      261       1       1       0   .abs_section_261
+     _DDRQ                                      262       1       1       0   .abs_section_262
+     _RDRQ                                      263       1       1       0   .abs_section_263
+     _PERQ                                      264       1       1       0   .abs_section_264
+     _PPSQ                                      265       1       1       0   .abs_section_265
+     _PTU                                       268       1       1       0   .abs_section_268
+     Port_u                                     268       0       0       9   .text       
+     _PTIU                                      269       1       1       0   .abs_section_269
+     _DDRU                                      26A       1       1       0   .abs_section_26a
+     _RDRU                                      26B       1       1       0   .abs_section_26b
+     _PERU                                      26C       1       1       0   .abs_section_26c
+     _PPSU                                      26D       1       1       0   .abs_section_26d
+     _MODRR                                     26E       1       1       0   .abs_section_26e
+     _PTAD                                      270       2       2       4   .abs_section_270
+     _PTIAD                                     272       2       2       0   .abs_section_272
+     _DDRAD                                     274       2       2       1   .abs_section_274
+     _RDRAD                                     276       2       2       0   .abs_section_276
+     _PERAD                                     278       2       2       0   .abs_section_278
+     _PPSAD                                     27A       2       2       0   .abs_section_27a
+     _PIEAD                                     27C       2       2       0   .abs_section_27c
+     _PIFAD                                     27E       2       2       0   .abs_section_27e
+     data                                       800       2       2       4   .bss        
+     tone                                       802       2       2       2   .bss        
+     tone_count                                 804       2       2       3   .bss        
+     container_array                            806      64     100       4   My_variables
+     container_data                             86A       1       1       8   My_variables
+     container_index                            86B       1       1      10   My_variables
+     cont_index_hundreds                        86C       1       1       9   My_variables
+     cont_index_tens                            86D       1       1       9   My_variables
+     cont_index_ones                            86E       1       1       9   My_variables
+     cont_index_remainder                       86F       1       1       8   My_variables
+     added_cont_flag                            870       1       1       4   My_variables
+     removed_cont_flag                          871       1       1       4   My_variables
+     add_cont_song_flag                         872       1       1       4   My_variables
+     remove_cont_song_flag                      873       1       1       4   My_variables
+     cont_check                                 874       1       1       4   My_variables
+     add_B_flag                                 875       1       1       3   My_variables
+     add_B_flag1                                876       1       1       1   My_variables
+     disp                                       877      21      33       2   My_variables
+     wh_picker_msg                              898      21      33      33   My_variables
+     wh_picker_msg_0                            8B9      21      33      37   My_variables
+     wh_picker_msg_1                            8DA      21      33      37   My_variables
+     wh_picker_msg_2                            8FB      21      33      43   My_variables
+     KEY_PRESSED                                91C       1       1      30   My_variables
+     sub_menu                                   91D       1       1       0   My_variables
+     wh_password                                91E       4       4       5   My_variables
+     wh_password1                               922       4       4       4   My_variables
+     wh_password2                               926       4       4       4   My_variables
+     wh_password3                               92A       4       4       4   My_variables
+     wh_password4                               92E       4       4       4   My_variables
+     password_entered                           932       4       4       2   My_variables
+     counter                                    936       2       2       4   My_variables
+     OnesDigit                                  938       1       1      13   My_variables
+     TensDigit                                  939       1       1      13   My_variables
+     HundredsDigit                              93A       1       1       4   My_variables
+     remainder                                  93B       2       2      13   My_variables
+     day                                        93D       1       1       6   My_variables
+     hours                                      93E       1       1       6   My_variables
+     minutes                                    93F       1       1       6   My_variables
+     seconds                                    940       1       1       7   My_variables
+     local_time_msg_1                           941      21      33      43   My_variables
+     local_time_msg_2                           962      2C      44      70   My_variables
+     time_digits                                98E       5       5      17   My_variables
+     gmt_counter                                993       2       2       4   My_variables
+     gmt_OnesDigit                              995       1       1      13   My_variables
+     gmt_TensDigit                              996       1       1      13   My_variables
+     gmt_HundredsDigit                          997       1       1       4   My_variables
+     gmt_remainder                              998       2       2      13   My_variables
+     gmt_day                                    99A       1       1       6   My_variables
+     gmt_hours                                  99B       1       1       6   My_variables
+     gmt_minutes                                99C       1       1       6   My_variables
+     gmt_seconds                                99D       1       1       5   My_variables
+     gmt_time_msg_1                             99E      21      33      43   My_variables
+     gmt_time_msg_2                             9BF      21      33      69   My_variables
+     gmt_time_digits                            9E0       5       5      17   My_variables
+     auto_dc_motor_flag                         9E5       1       1       1   My_variables
+     man_dc_motor_flag                          9E6       1       1       1   My_variables
+     dc_count                                   9E7       1       1       1   My_variables
+     dc_time_on                                 9E8       1       1       1   My_variables
+     dc_time_off                                9E9       1       1       1   My_variables
+     prev_key                                   9EA       1       1       1   My_variables
+     dc_delay_count                             9EB       2       2       1   My_variables
+     bobs_flag                                  9ED       1       1       3   My_variables
+     backdoor_flag                              9EE       1       1       3   My_variables
+     step_delay_FLAG                            9EF       1       1       3   My_variables
+     STEP_COUNT                                 9F0       1       1       7   My_variables
+     clear_lcd_flag                             9F1       1       1       0   My_variables
+     irq_pressed                                9F2       1       1       4   My_variables
+     pb_pressed                                 9F3       1       1       4   My_variables
+     pb_pressed_debounce                        9F4       2       2       2   My_variables
+     IRQ_to_PW_flag                             9F6       1       1       1   My_variables
+     irq_time_stamp                             9F7       2       2       2   My_variables
+     note_we_on                                 9F9       2       2      16   My_variables
+     toggle_note                                9FB       1       1       4   My_variables
+     toggle_note2                               9FC       1       1       4   My_variables
+     toggle_note3                               9FD       1       1       4   My_variables
+     toggle_note4                               9FE       1       1       4   My_variables
+     toggle_count                               9FF       2       2      14   My_variables
+     KeypressFlag                               A01       1       1       4   My_variables
+     pot_value                                  A02       2       2       9   .common     
+     _Startup                                  C000       0       0       0   .init       
+     Entry                                     C000       E      14       0   .init       
+     delay_ms                                  C00E      17      23       5   NON_BANKED  
+     init_LCD                                  C025      52      82       1   NON_BANKED  
+     display_string                            C077      38      56       1   NON_BANKED  
+     Delay                                     C0AF      1F      31       1   NON_BANKED  
+     epulse                                    C0CE      24      36       3   NON_BANKED  
+     sendCommand                               C0F2       F      15       7   NON_BANKED  
+     read_pot                                  C101      18      24       2   NON_BANKED  
+     SendsChr                                  C119       8       8       4   NON_BANKED  
+     PlayTone                                  C121      1A      26       4   NON_BANKED  
+     m_seq                                     C13B       6       6       2   My_constants
+     KEYPAD_ROW                                C141       4       4       4   My_constants
+     KEYPAD_KEYS                               C145      10      16       4   My_constants
+     KEYPAD_VALUES                             C155      10      16       1   My_constants
+     song1                                     C165       7       7       2   My_constants
+     song1_backwards                           C16C       7       7       2   My_constants
+     song2                                     C173       7       7       2   My_constants
+     song3                                     C17A       7       7       2   My_constants
+     MAIN_MENU_MSG_1                           C181      21      33       1   My_constants
+     MAIN_MENU_MSG_2                           C1A2      21      33       1   My_constants
+     MAIN_MENU_MSG_3                           C1C3      21      33       1   My_constants
+     MAIN_MENU_MSG_5                           C1E4      21      33       1   My_constants
+     MAIN_MENU_MSG_4                           C205      21      33       1   My_constants
+     fire_message                              C226      20      32       1   My_constants
+     start_msg                                 C246      21      33       1   My_constants
+     inc_password_msg                          C267      21      33       1   My_constants
+     msg_for_bob                               C288      21      33       1   My_constants
+     backdoor_msg                              C2A9      21      33       1   My_constants
+     clear_LCD_screen                          C2CA      21      33       0   My_constants
+     switch_warning_msg                        C2EB      21      33       1   My_constants
+     switch_warning_msg2                       C30C      21      33       1   My_constants
+     med_or_large_msg                          C32D      21      33       1   My_constants
+     heavy_or_light_msg                        C34E      21      33       1   My_constants
+     fragile_or_rugged_msg                     C36F      21      33       1   My_constants
+     day_char_1                                C390       8       8       2   My_constants
+     day_char_2                                C398       8       8       2   My_constants
+     day_char_3                                C3A0       8       8       2   My_constants
+     gmt_day_char_1                            C3A8       8       8       2   My_constants
+     gmt_day_char_2                            C3B0       8       8       2   My_constants
+     gmt_day_char_3                            C3B8       8       8       2   My_constants
+     read_keypad                               C3C0      12      18      28   keypad.asm._SEC000000
+     scan_1                                    C3D2       9       9       0   keypad.asm._SEC000000
+     read_2                                    C3DB      10      16       0   keypad.asm._SEC000000
+     scan_2                                    C3EB       9       9       0   keypad.asm._SEC000000
+     read_3                                    C3F4      10      16       0   keypad.asm._SEC000000
+     scan_3                                    C404       9       9       0   keypad.asm._SEC000000
+     read_4                                    C40D       C      12       0   keypad.asm._SEC000000
+     scan_4                                    C419       D      13       0   keypad.asm._SEC000000
+     return_key                                C426      12      18       0   keypad.asm._SEC000000
+     no_key_pressed                            C438       8       8       0   keypad.asm._SEC000000
+     debounce                                  C440       1       1       1   keypad.asm._SEC000000
+     debounce1                                 C441      17      23       0   keypad.asm._SEC000000
+     delay_1_ms                                C458       4       4       4   keypad.asm._SEC000000
+     delay_loop                                C45C       5       5       0   keypad.asm._SEC000000
+     main_menu                                 C461      2C      44       3   main_menu.asm._SEC000000
+     reading_pot                               C461       0       0       0   main_menu.asm._SEC000000
+     MENU_2                                    C48D      1C      28       0   main_menu.asm._SEC000000
+     MENU_3                                    C4A9      1E      30       0   main_menu.asm._SEC000000
+     MENU_4                                    C4C7      20      32       0   main_menu.asm._SEC000000
+     MENU_5                                    C4E7      15      21       0   main_menu.asm._SEC000000
+     display_backdoor_msg                      C4FC      15      21       0   main_menu.asm._SEC000000
+     display_to_lcd                            C511       6       6      46   lcddisp.asm._SEC000000
+     display_to_lcd_loop                       C517      14      20       0   lcddisp.asm._SEC000000
+     password                                  C52B       2       2       3   password.asm._SEC000000
+     password_start                            C52D       9       9       0   password.asm._SEC000000
+     read_password                             C536      17      23       0   password.asm._SEC000000
+     check_password                            C54D      2C      44       0   password.asm._SEC000000
+     wrong_password                            C579       E      14       0   password.asm._SEC000000
+     exit_read_password                        C587       3       3       0   password.asm._SEC000000
+     rti_delay                                 C58A       4       4      48   delay.asm._SEC000000
+     while_seconds_doesnt_change               C58E       7       7       0   delay.asm._SEC000000
+     RTI_ISR                                   C595      51      81       0   RTI.asm._SEC000000
+     done_with_local_time                      C5E6      51      81       0   RTI.asm._SEC000000
+     done_with_gmt_time                        C637       B      11       0   RTI.asm._SEC000000
+     add_continue_song                         C642      10      16       0   RTI.asm._SEC000000
+     send_note1                                C652      3C      60       0   RTI.asm._SEC000000
+     reset3                                    C68E       5       5       0   RTI.asm._SEC000000
+     done3                                     C693       0       0       0   RTI.asm._SEC000000
+     remove_cont                               C693       B      11       0   RTI.asm._SEC000000
+     remove_continue_song                      C69E      10      16       0   RTI.asm._SEC000000
+     send_note2                                C6AE      3C      60       0   RTI.asm._SEC000000
+     reset4                                    C6EA       5       5       0   RTI.asm._SEC000000
+     done4                                     C6EF       0       0       0   RTI.asm._SEC000000
+     irq_button                                C6EF       B      11       0   RTI.asm._SEC000000
+     continue_song                             C6FA      14      20       0   RTI.asm._SEC000000
+     send_note                                 C70E      43      67       0   RTI.asm._SEC000000
+     reset                                     C751       5       5       0   RTI.asm._SEC000000
+     done                                      C756       0       0       0   RTI.asm._SEC000000
+     push_button                               C756       B      11       0   RTI.asm._SEC000000
+     pb_debounce                               C761      1F      31       0   RTI.asm._SEC000000
+     check_keypad                              C780      17      23       0   RTI.asm._SEC000000
+     send_beep                                 C797      36      54       0   RTI.asm._SEC000000
+     reset2                                    C7CD       5       5       0   RTI.asm._SEC000000
+     done2                                     C7D2       0       0       0   RTI.asm._SEC000000
+     turn_off_led                              C7D2      14      20       0   RTI.asm._SEC000000
+     dc_motor_delay                            C7E6       9       9       0   RTI.asm._SEC000000
+     display_backdoor_msg                      C7EF       5       5       0   RTI.asm._SEC000000
+     aalans_stepper                            C7F4      18      24       0   RTI.asm._SEC000000
+     end2                                      C80C       5       5       0   RTI.asm._SEC000000
+     IRQ_ISR                                   C811      1D      29       0   irq.asm._SEC000000
+     gmt_time                                  C82E       3       3       1   gmt_time.asm._SEC000000
+     gdisp_time_day                            C831     128     296       0   gmt_time.asm._SEC000000
+     gget_first_hours_digit                    C959      12      18       0   gmt_time.asm._SEC000000
+     gcheck_if_higher_than_2                   C96B      12      18       0   gmt_time.asm._SEC000000
+     gget_2nd_hours_digit                      C97D       7       7       0   gmt_time.asm._SEC000000
+     gsecond_digit_less_than_2                 C984      1B      27       0   gmt_time.asm._SEC000000
+     gcompare_digit_to_9                       C99F      14      20       0   gmt_time.asm._SEC000000
+     gsecond_digit_could_be_2                  C9B3      1B      27       0   gmt_time.asm._SEC000000
+     gcheck_if_3_or_higher                     C9CE      12      18       0   gmt_time.asm._SEC000000
+     gfirst_minutes_digit                      C9E0      1B      27       0   gmt_time.asm._SEC000000
+     gcontinue_read_1st_minute                 C9FB      12      18       0   gmt_time.asm._SEC000000
+     gsecond_minutes_digit                     CA0D      1B      27       0   gmt_time.asm._SEC000000
+     gcontinue_read_2nd_minute                 CA28      12      18       0   gmt_time.asm._SEC000000
+     gread_day_1                               CA3A      1B      27       0   gmt_time.asm._SEC000000
+     gcontinue_read_1st_day                    CA55      2B      43       0   gmt_time.asm._SEC000000
+     gconfirm_day                              CA80      25      37       0   gmt_time.asm._SEC000000
+     gcontinue_confirm_day                     CAA5      2A      42       0   gmt_time.asm._SEC000000
+     exit_gmt_time                             CACF       4       4       0   gmt_time.asm._SEC000000
+     local_time                                CAD3       3       3       2   local_time.asm._SEC000000
+     disp_time_day                             CAD6     128     296       0   local_time.asm._SEC000000
+     get_first_hours_digit                     CBFE      12      18       0   local_time.asm._SEC000000
+     check_if_higher_than_2                    CC10      12      18       0   local_time.asm._SEC000000
+     get_2nd_hours_digit                       CC22       7       7       0   local_time.asm._SEC000000
+     second_digit_less_than_2                  CC29      1B      27       0   local_time.asm._SEC000000
+     compare_digit_to_9                        CC44      14      20       0   local_time.asm._SEC000000
+     second_digit_could_be_2                   CC58      1B      27       0   local_time.asm._SEC000000
+     check_if_3_or_higher                      CC73      12      18       0   local_time.asm._SEC000000
+     first_minutes_digit                       CC85      1B      27       0   local_time.asm._SEC000000
+     continue_read_1st_minute                  CCA0      12      18       0   local_time.asm._SEC000000
+     second_minutes_digit                      CCB2      1B      27       0   local_time.asm._SEC000000
+     continue_read_2nd_minute                  CCCD      12      18       0   local_time.asm._SEC000000
+     read_day_1                                CCDF      1B      27       0   local_time.asm._SEC000000
+     continue_read_1st_day                     CCFA      2B      43       0   local_time.asm._SEC000000
+     confirm_day                               CD25      25      37       0   local_time.asm._SEC000000
+     continue_confirm_day                      CD4A      2A      42       0   local_time.asm._SEC000000
+     exit_local_time                           CD74       4       4       0   local_time.asm._SEC000000
+     init                                      CD78     16B     363       1   picker_init.asm._SEC000000
+     clr_storage                               CEE3     58B    1419       0   picker_init.asm._SEC000000
+     wh_picker                                 D46E      77     119       2   wh_picker.asm._SEC000000
+     checking_pot                              D46E       0       0       0   wh_picker.asm._SEC000000
+     inc_cont_index                            D4E5      4A      74       0   wh_picker.asm._SEC000000
+     WH_MENU_2                                 D52F      8A     138       0   wh_picker.asm._SEC000000
+     dec_cont_index                            D5B9      4A      74       0   wh_picker.asm._SEC000000
+     WH_MENU_3                                 D603      6C     108       0   wh_picker.asm._SEC000000
+     first_time                                D66F       5       5       0   wh_picker.asm._SEC000000
+     after_first_time                          D674       3       3       0   wh_picker.asm._SEC000000
+     next_container3                           D677       9       9       0   wh_picker.asm._SEC000000
+     at_container3                             D680      10      16       0   wh_picker.asm._SEC000000
+     display_its_big                           D690       5       5       0   wh_picker.asm._SEC000000
+     next_disp                                 D695      10      16       0   wh_picker.asm._SEC000000
+     display_its_light                         D6A5       5       5       0   wh_picker.asm._SEC000000
+     next_disp2                                D6AA      10      16       0   wh_picker.asm._SEC000000
+     display_its_rugged                        D6BA       5       5       0   wh_picker.asm._SEC000000
+     next_disp3                                D6BF       4       4       0   wh_picker.asm._SEC000000
+     switch_check                              D6C3      17      23       0   wh_picker.asm._SEC000000
+     switch_check2                             D6DA      1A      26       0   wh_picker.asm._SEC000000
+     medium_or_large                           D6F4      1A      26       0   wh_picker.asm._SEC000000
+     set_medium                                D70E       B      11       0   wh_picker.asm._SEC000000
+     set_large                                 D719       9       9       0   wh_picker.asm._SEC000000
+     heavy_or_light                            D722      1A      26       0   wh_picker.asm._SEC000000
+     set_heavy                                 D73C       B      11       0   wh_picker.asm._SEC000000
+     set_light                                 D747       9       9       0   wh_picker.asm._SEC000000
+     fragile_or_rugged                         D750      1A      26       0   wh_picker.asm._SEC000000
+     set_fragile                               D76A       B      11       0   wh_picker.asm._SEC000000
+     set_rugged                                D775       9       9       0   wh_picker.asm._SEC000000
+     end_cont_menu                             D77E      1E      30       0   wh_picker.asm._SEC000000
+     next_container1                           D79C       9       9       0   wh_picker.asm._SEC000000
+     at_container                              D7A5      3C      60       0   wh_picker.asm._SEC000000
+     reset1                                    D7E1       5       5       0   wh_picker.asm._SEC000000
+     loop                                      D7E6       E      14       0   wh_picker.asm._SEC000000
+     slow                                      D7F4       F      15       1   wh_picker.asm._SEC000000
+     exit_steppy                               D803      39      57       0   wh_picker.asm._SEC000000
+     delete_container                          D83C      1E      30       0   wh_picker.asm._SEC000000
+     next_container2                           D85A       9       9       0   wh_picker.asm._SEC000000
+     at_container2                             D863      49      73       0   wh_picker.asm._SEC000000
+     reset12                                   D8AC       5       5       0   wh_picker.asm._SEC000000
+     loop2                                     D8B1       E      14       0   wh_picker.asm._SEC000000
+     slow2                                     D8BF       F      15       1   wh_picker.asm._SEC000000
+     exit_steppy2                              D8CE      34      52       0   wh_picker.asm._SEC000000
+     exit_wh_picker                            D902      1A      26       0   wh_picker.asm._SEC000000
+
+*********************************************************************************************
+UNUSED-OBJECTS SECTION
+---------------------------------------------------------------------------------------------
+
+*********************************************************************************************
+COPYDOWN SECTION
+---------------------------------------------------------------------------------------------
+
+*********************************************************************************************
+OBJECT-DEPENDENCIES SECTION
+---------------------------------------------------------------------------------------------
+Entry                     USES __SEG_END_SSTACK init password main_menu 
+init_LCD                  USES _DDRAD _PTAD _DDRM delay_ms _PTM data 
+                                sendCommand epulse 
+display_string            USES sendCommand data _PTAD epulse 
+epulse                    USES data _PTM delay_ms 
+sendCommand               USES data _PTAD epulse 
+read_pot                  USES _ATDCTL23 Delay _ATDCTL45 _ATDSTAT0 _ATDDR0 
+                                pot_value 
+SendsChr                  USES tone 
+PlayTone                  USES tone_count tone _PTT 
+read_keypad               USES KEYPAD_ROW Port_u 
+scan_1                    USES KEYPAD_KEYS 
+read_2                    USES KEYPAD_ROW Port_u 
+scan_2                    USES KEYPAD_KEYS 
+read_3                    USES KEYPAD_ROW Port_u 
+scan_3                    USES KEYPAD_KEYS 
+read_4                    USES KEYPAD_ROW Port_u 
+scan_4                    USES KEYPAD_KEYS 
+return_key                USES debounce KEYPAD_VALUES KEY_PRESSED KeypressFlag 
+no_key_pressed            USES KEY_PRESSED 
+debounce1                 USES delay_1_ms Port_u 
+main_menu                 USES backdoor_flag read_pot pot_value 
+                                MAIN_MENU_MSG_1 display_to_lcd read_keypad KEY_PRESSED 
+                                wh_picker 
+MENU_2                    USES pot_value MAIN_MENU_MSG_2 display_to_lcd 
+                                read_keypad KEY_PRESSED wh_picker 
+MENU_3                    USES pot_value MAIN_MENU_MSG_3 display_to_lcd 
+                                read_keypad KEY_PRESSED local_time 
+MENU_4                    USES pot_value MAIN_MENU_MSG_5 display_to_lcd 
+                                read_keypad KEY_PRESSED gmt_time 
+MENU_5                    USES MAIN_MENU_MSG_4 display_to_lcd read_keypad 
+                                KEY_PRESSED password 
+display_backdoor_msg      USES backdoor_msg display_to_lcd rti_delay 
+                                backdoor_flag 
+display_to_lcd_loop       USES disp display_string 
+password_start            USES start_msg display_to_lcd 
+read_password             USES read_keypad KEY_PRESSED password_entered 
+check_password            USES password_entered wh_password bobs_flag 
+                                msg_for_bob display_to_lcd rti_delay 
+wrong_password            USES inc_password_msg display_to_lcd rti_delay 
+rti_delay                 USES seconds 
+while_seconds_doesnt_change USES seconds 
+RTI_ISR                   USES counter seconds minutes hours day 
+done_with_local_time      USES gmt_counter gmt_seconds gmt_minutes gmt_hours 
+                                gmt_day 
+done_with_gmt_time        USES add_cont_song_flag 
+add_continue_song         USES toggle_note3 song1 note_we_on 
+send_note1                USES note_we_on SendsChr PlayTone Port_s 
+                                toggle_count song1 add_cont_song_flag 
+reset3                    USES toggle_note3 
+remove_cont               USES remove_cont_song_flag 
+remove_continue_song      USES toggle_note4 song1_backwards note_we_on 
+send_note2                USES note_we_on SendsChr PlayTone Port_s 
+                                toggle_count song1_backwards remove_cont_song_flag 
+reset4                    USES toggle_note4 
+irq_button                USES irq_pressed 
+continue_song             USES Port_t toggle_note song2 note_we_on 
+send_note                 USES note_we_on SendsChr PlayTone Port_s 
+                                toggle_count song2 irq_pressed Port_t password 
+reset                     USES toggle_note 
+push_button               USES Port_p 
+pb_debounce               USES Port_p pb_pressed Port_t Port_s local_time 
+check_keypad              USES KeypressFlag toggle_note2 song3 note_we_on 
+send_beep                 USES note_we_on SendsChr PlayTone toggle_count song3 
+                                KeypressFlag 
+reset2                    USES toggle_note2 
+turn_off_led              USES pb_pressed Port_s pb_pressed_debounce Port_t 
+dc_motor_delay            USES Port_t 
+display_backdoor_msg      USES backdoor_flag 
+aalans_stepper            USES step_delay_FLAG toggle_count 
+end2                      USES RTIFLG 
+IRQ_ISR                   USES fire_message display_to_lcd irq_pressed Port_s 
+                                local_time_msg_2 irq_time_stamp 
+gdisp_time_day            USES gmt_hours gmt_remainder gmt_HundredsDigit 
+                                gmt_TensDigit gmt_OnesDigit gmt_time_msg_1 gmt_minutes 
+                                gmt_seconds gmt_day gmt_day_char_1 gmt_day_char_2 
+                                gmt_day_char_3 display_to_lcd read_keypad KEY_PRESSED 
+                                gmt_time_msg_2 
+gget_first_hours_digit    USES read_keypad KEY_PRESSED 
+gcheck_if_higher_than_2   USES gmt_time_digits gmt_time_msg_2 display_to_lcd 
+gget_2nd_hours_digit      USES gmt_time_digits 
+gsecond_digit_less_than_2 USES read_keypad KEY_PRESSED gmt_time_msg_2 
+                                display_to_lcd 
+gcompare_digit_to_9       USES gmt_time_digits gmt_time_msg_2 display_to_lcd 
+gsecond_digit_could_be_2  USES read_keypad KEY_PRESSED gmt_time_msg_2 
+                                display_to_lcd 
+gcheck_if_3_or_higher     USES gmt_time_digits gmt_time_msg_2 display_to_lcd 
+gfirst_minutes_digit      USES read_keypad KEY_PRESSED gmt_time_msg_2 
+                                display_to_lcd 
+gcontinue_read_1st_minute USES gmt_time_digits gmt_time_msg_2 display_to_lcd 
+gsecond_minutes_digit     USES read_keypad KEY_PRESSED gmt_time_msg_2 
+                                display_to_lcd 
+gcontinue_read_2nd_minute USES gmt_time_digits gmt_time_msg_2 display_to_lcd 
+gread_day_1               USES read_keypad KEY_PRESSED gmt_time_msg_2 
+                                display_to_lcd 
+gcontinue_read_1st_day    USES gmt_time_digits gmt_day_char_1 gmt_time_msg_2 
+                                gmt_day_char_2 gmt_day_char_3 display_to_lcd 
+gconfirm_day              USES read_keypad KEY_PRESSED gmt_time_msg_2 
+                                display_to_lcd 
+gcontinue_confirm_day     USES gmt_time_digits gmt_hours gmt_minutes gmt_day 
+disp_time_day             USES hours remainder HundredsDigit TensDigit 
+                                OnesDigit local_time_msg_1 minutes seconds day 
+                                day_char_1 day_char_2 day_char_3 display_to_lcd 
+                                read_keypad KEY_PRESSED local_time_msg_2 
+get_first_hours_digit     USES read_keypad KEY_PRESSED 
+check_if_higher_than_2    USES time_digits local_time_msg_2 display_to_lcd 
+get_2nd_hours_digit       USES time_digits 
+second_digit_less_than_2  USES read_keypad KEY_PRESSED local_time_msg_2 
+                                display_to_lcd 
+compare_digit_to_9        USES time_digits local_time_msg_2 display_to_lcd 
+second_digit_could_be_2   USES read_keypad KEY_PRESSED local_time_msg_2 
+                                display_to_lcd 
+check_if_3_or_higher      USES time_digits local_time_msg_2 display_to_lcd 
+first_minutes_digit       USES read_keypad KEY_PRESSED local_time_msg_2 
+                                display_to_lcd 
+continue_read_1st_minute  USES time_digits local_time_msg_2 display_to_lcd 
+second_minutes_digit      USES read_keypad KEY_PRESSED local_time_msg_2 
+                                display_to_lcd 
+continue_read_2nd_minute  USES time_digits local_time_msg_2 display_to_lcd 
+read_day_1                USES read_keypad KEY_PRESSED local_time_msg_2 
+                                display_to_lcd 
+continue_read_1st_day     USES time_digits day_char_1 local_time_msg_2 
+                                day_char_2 day_char_3 display_to_lcd 
+confirm_day               USES read_keypad KEY_PRESSED local_time_msg_2 
+                                display_to_lcd 
+continue_confirm_day      USES time_digits hours minutes day 
+init                      USES init_LCD bobs_flag container_index 
+                                cont_index_hundreds cont_index_tens cont_index_ones 
+                                added_cont_flag removed_cont_flag add_cont_song_flag 
+                                remove_cont_song_flag container_data add_B_flag add_B_flag1 
+                                cont_check step_delay_FLAG STEP_COUNT counter day hours 
+                                minutes seconds gmt_counter gmt_day gmt_hours 
+                                gmt_minutes gmt_seconds RTICTL RTIENA Port_s_ddr 
+                                Port_t_ddr Port_p_ddr toggle_note toggle_note2 
+                                toggle_note3 toggle_note4 pb_pressed pb_pressed_debounce 
+                                irq_pressed IRQ_to_PW_flag irq_time_stamp 
+                                auto_dc_motor_flag man_dc_motor_flag dc_time_on prev_key dc_count 
+                                dc_time_off dc_delay_count KeypressFlag wh_password 
+                                wh_password1 wh_password2 wh_password3 wh_password4 
+                                container_array 
+clr_storage               USES time_digits OnesDigit TensDigit HundredsDigit 
+                                remainder gmt_time_digits gmt_OnesDigit gmt_TensDigit 
+                                gmt_HundredsDigit gmt_remainder local_time_msg_1 
+                                local_time_msg_2 gmt_time_msg_1 gmt_time_msg_2 wh_picker_msg 
+                                wh_picker_msg_0 wh_picker_msg_1 wh_picker_msg_2 
+wh_picker                 USES read_pot pot_value wh_picker_msg_0 
+                                display_to_lcd read_keypad KEY_PRESSED cont_index_hundreds 
+                                cont_index_tens cont_index_ones added_cont_flag 
+inc_cont_index            USES container_index cont_index_remainder 
+                                cont_index_hundreds cont_index_tens cont_index_ones 
+WH_MENU_2                 USES pot_value wh_picker_msg_1 display_to_lcd 
+                                read_keypad KEY_PRESSED cont_index_hundreds 
+                                cont_index_tens cont_index_ones removed_cont_flag 
+dec_cont_index            USES container_index cont_index_remainder 
+                                cont_index_hundreds cont_index_tens cont_index_ones 
+WH_MENU_3                 USES wh_picker_msg_2 display_to_lcd read_keypad 
+                                KEY_PRESSED container_index add_B_flag 
+first_time                USES add_B_flag 
+after_first_time          USES container_array 
+at_container3             USES cont_check wh_picker_msg_2 
+display_its_big           USES wh_picker_msg_2 
+next_disp                 USES cont_check wh_picker_msg_2 
+display_its_light         USES wh_picker_msg_2 
+next_disp2                USES cont_check wh_picker_msg_2 
+display_its_rugged        USES wh_picker_msg_2 
+switch_check              USES Port_t switch_warning_msg display_to_lcd 
+                                rti_delay 
+switch_check2             USES Port_t container_index switch_warning_msg2 
+                                display_to_lcd rti_delay 
+medium_or_large           USES med_or_large_msg display_to_lcd read_keypad 
+                                KEY_PRESSED 
+set_medium                USES Port_s container_data 
+set_large                 USES Port_s container_data 
+heavy_or_light            USES heavy_or_light_msg display_to_lcd read_keypad 
+                                KEY_PRESSED 
+set_heavy                 USES Port_s container_data 
+set_light                 USES Port_s container_data 
+fragile_or_rugged         USES fragile_or_rugged_msg display_to_lcd 
+                                read_keypad KEY_PRESSED 
+set_fragile               USES Port_s container_data 
+set_rugged                USES Port_s container_data 
+end_cont_menu             USES Port_s added_cont_flag remove_cont_song_flag 
+                                rti_delay container_index container_array 
+at_container              USES container_data rti_delay Port_t Port_s 
+reset1                    USES m_seq 
+loop                      USES Port_p slow 
+slow                      USES rti_delay STEP_COUNT 
+exit_steppy               USES STEP_COUNT Port_t rti_delay Port_s main_menu 
+delete_container          USES add_cont_song_flag Port_s removed_cont_flag 
+                                rti_delay container_index container_array 
+at_container2             USES container_index rti_delay Port_t Port_s 
+reset12                   USES m_seq 
+loop2                     USES Port_p slow2 
+slow2                     USES rti_delay STEP_COUNT 
+exit_steppy2              USES STEP_COUNT Port_t rti_delay Port_s main_menu 
+exit_wh_picker            USES removed_cont_flag added_cont_flag 
+                                wh_picker_msg_2 
+
+*********************************************************************************************
+DEPENDENCY TREE
+*********************************************************************************************
+ RTI_ISR             
+   
+ IRQ_ISR             
+ | 
+ +- display_to_lcd      
+      
+*********************************************************************************************
+STATISTIC SECTION
+---------------------------------------------------------------------------------------------
+
+ExeFile:
+--------
+Number of blocks to be downloaded: 14
+Total size of all blocks to be downloaded: 6434
+
